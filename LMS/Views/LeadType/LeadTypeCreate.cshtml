@@ -1,0 +1,55 @@
+﻿@model HRMS.Core.Entities.LeadManagement.LeadType
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+
+<form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+      data-ajax-complete="AjaxComplete"
+      asp-action="UpsertLeadType" asp-controller="LeadType" data-ajax-success="Success">
+
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+
+                    <input asp-for="Id" type="hidden" />
+                    <input asp-for="CreatedBy" type="hidden" />
+                    <input asp-for="CreatedDate" type="hidden" />
+                    <label asp-for="Name"> Name:</label> <em class="text-danger">*</em>
+                    <input type="text" class="form-control" asp-for="Name" placeholder="Enter Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+
+                </div>
+                <div class="col-md-6">
+
+                    <label asp-for="Code">  Code :</label><em class="text-danger">*</em>
+                    <input asp-for="Code" class="form-control" placeholder="Enter Code" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <label asp-for="Description">Description :</label><em class="text-danger">*</em>
+                    <textarea asp-for="Description" class="form-control" placeholder="Enter Description"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer background-login">
+        <button type="button" class="btn vd_btn vd_bg-grey" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary pull-right" value="Save Changes" />
+        <button class="buttonload" style="display:none">
+            <i class="fa fa-refresh fa-spin"></i>Loading
+        </button>
+    </div>
+
+</form>

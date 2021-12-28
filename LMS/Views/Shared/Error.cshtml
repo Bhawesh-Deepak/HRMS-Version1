@@ -1,0 +1,38 @@
+﻿<div class="modal fade" id="divErrorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header vd_bg-blue vd_white">
+                <a asp-action="Index" asp-controller="Home" type="button" onclick="" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></a>
+                <h4 class="modal-title" id="myModalLabel">Error Occured</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <fieldset class="fieldset marB0">
+                            <div>
+                                <h4>
+                                    There is some connection issue, Please check your connection and proceed.
+                                    If the error continues, Please contact your admin regarding  this issue.
+                                </h4>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Cancel</a>
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Mail Issue</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#divErrorModal").modal('show');
+    })
+</script>

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<HRMS.Core.ReqRespVm.Response.UserManagement.RoleAccessVm>
+<style>
+    .collapse {
+        display: none;
+    }
+</style>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <form id="form" method="post" data-ajax="true" data-ajax-method="post"
+                      asp-action="RoleAccessPost" asp-controller="RoleAccess" data-ajax-success="Success"
+                      data-ajax-begin="CustomFormSubmitBegin" data-ajax-complete="CustomFormSubmitComplete">
+                    <div class="col-md-12">
+                       <input type="hidden" value="@ViewBag.RoleId" name="RoleId" />
+
+                        <table id="tblDataList" class="table table-striped table-bordered responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>Module Name</th>
+                                    <th>Sub Module Name</th>
+                                  <th>Display Order</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblAssign">
+                                @foreach (var data in Model.GroupBy(x => x.ModuleName))
+                                {
+                                    <tr>
+                                        <td>
+                                            @if (data.First().IsMapped)
+                                            {
+                                                <input type="checkbox" checked="checked" onchange="MasterCheckChange(this)" data-moduleId="@data.First().MoudleId" />
+                                            }
+                                            else
+                                            {
+                                                <input type="checkbox" onchange="MasterCheckChange(this)" data-moduleId="@data.First().MoudleId" />
+                                            }
+
+                                        </td>
+                                        <td colspan="5">
+                                            <a class="btn btn-outline-danger"
+                                               value="@data.Key" onclick="ExpandCollapse('@data.First().MoudleId', this)">
+                                               
+                                                <span class="fa fa-minus-circle"> &nbsp;  @data.Key</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    @foreach (var item in data)
+                                    {
+                                        <tr id="@data.First().MoudleId" class="collapse @data.First().MoudleId">
+                                            <td>
+                                                <input type="hidden" name="module" value="@item.MoudleId" />
+                                                <input type="hidden" name="subModule" value="@item.SubModuleId" />
+                                                @if (item.IsMapped)
+                                                {
+                                                    <input type="checkbox" data-moduleId="@item.MoudleId" name="access" checked="checked" value="@item.SubModuleId" />
+                                                }
+                                                else
+                                                {
+                                                    <input type="checkbox" data-moduleId="@item.MoudleId" name="access" value="@item.SubModuleId" />
+                                                }
+
+                                            </td>
+                                            <td>
+                                                @item.ModuleName
+                                            </td>
+                                            <td>
+                                                @item.SubModuleName
+                                            </td>
+                                            <td>
+                                                <input type="number" value="@item.DisplayOrder" name="DisplayOrder" class="form-control" />
+                                            </td>
+                                            
+                                        </tr>
+                                    }
+
+                                }
+
+                            </tbody>
+
+                        </table>
+
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success" value="Save" />
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    function ExpandCollapse(event, eData) {
+        $("." + event).toggleClass('collapse');
+        $('i').find("[data-id='" + event + "']").removeClass('fa fa-plus').addClass('fa fa-minus');
+    }
+
+    function MasterCheckChange(id) {
+        if (id.checked) {
+            var childAttributeId = $(id).attr("data-moduleId");
+            $('[data-moduleId=' + childAttributeId + ']').each(function (i, data) {
+                $(data).prop('checked', true)
+            })
+        }
+        else {
+            var childAttributeId = $(id).attr("data-moduleId");
+            $('[data-moduleId=' + childAttributeId + ']').each(function (i, data) {
+                $(data).prop('checked', false)
+            })
+        }
+
+    }
+</script>
+

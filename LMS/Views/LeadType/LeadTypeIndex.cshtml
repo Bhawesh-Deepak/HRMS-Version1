@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Customer List";
+}
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a> </li>
+                        <li class="">Master</li>
+                        <li class="active">Lead Type</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vd_content-section clearfix">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-green">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Create @ViewBag.HeaderTitle</span> </h3>
+                                <div class="vd_panel-menu">
+                                    <a onclick="AddLeadType()" title="Add New Lead Type" class="btn vd_btn vd_bg-black btn-xs ">  <i class="fa fa-plus"></i> Add</a>
+                                     
+                                </div>
+                                <!-- vd_panel-menu -->
+                            </div>
+                            <div class="panel-body">
+                                <div id="divLead">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- .vd_content-section -->
+
+        </div>
+        <!-- .vd_content -->
+    </div>
+    <!-- .vd_container -->
+</div>
+
+<style>
+    .loading {
+        position: relative;
+    }
+
+        .loading:before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 9;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 2555, 255,0.6) url(../images/loading.gif) no-repeat center 35vh;
+            background-size: 85px;
+        }
+</style>
+<script src="~/js/jquery.js"></script>
+<script src="~/CustomJavaScript/CustomJs.js"></script>
+<script>
+    function GetLeadTypeList() {
+        GetCustomRecord("/LeadType/GetLeadTypeList", "divLead")
+    }
+
+    $(document).ready(function () {
+        GetLeadTypeList();
+    })
+
+    function AddLeadType() {
+        NewCustomRecord("/LeadType/CreateLeadType", "Create Lead Type")
+    }
+
+    function Delete(id, eData) {
+
+        CustomDeleteRecord(id, "/LeadType/GetLeadTypeList", "/LeadType/DeleteLeadType", eData);
+    }
+
+    function UpdateRecord(id) {
+        UpdateCustomRecord(id, "/LeadType/CreateLeadType", "Update Lead Type");
+    }
+</script>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HRMS.Core.Entities.UserManagement.ModuleMaster>
+
+<table id="tblDataList" class="table table-striped table-bordered responsive" style="width:100%">
+    <thead>
+        <tr>
+            <th>Module Name</th>
+            <th>Controller Name</th>
+            <th>Action Name</th>
+            <th>Icon</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+        <tr>
+            <td>
+                @data.ModuleName
+            </td>
+            <td>
+                @data.ControllerName
+            </td>
+            <td>
+                @data.ActionName
+            </td>
+            <td>
+                @data.ModuleIcon
+                <span class="@data.ModuleIcon"></span>
+            </td>
+
+            <td>
+                <a class="btn btn-outline-success pull-right" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'  style='color:#DD4B39'></i>" onclick="UpdateRecord(@data.Id, this)">
+                    <i class="fa fa-edit" style="color:#3C8DBC"></i>
+
+                </a>
+
+                <a class="btn btn-outline-danger pull-right" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'  style='color:#DD4B39'></i>" onclick="Delete(@data.Id, this)">
+                    <i class="fa fa-trash" style="color:#DD4B39"></i>
+
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>

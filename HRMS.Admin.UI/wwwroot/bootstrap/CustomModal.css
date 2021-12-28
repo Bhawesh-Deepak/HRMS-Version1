@@ -1,0 +1,21 @@
+﻿.buttonload {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+}
+
+/* Add a right margin to each icon */
+.Customfa {
+    margin-left: -12px;
+    margin-right: 8px;
+}
+.divHidding{
+    display:none;
+}
+table {
+    width: 100%;
+}
+
+em {
+    color: #ff0000;
+}

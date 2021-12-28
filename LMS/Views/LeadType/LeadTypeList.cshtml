@@ -1,0 +1,43 @@
+﻿@model IEnumerable<HRMS.Core.Entities.LeadManagement.LeadType>
+
+ 
+<link href="~/wp-contents/plugins/dataTables/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+<link href="~/wp-contents/plugins/dataTables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="~/wp-contents/plugins/dataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/wp-contents/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        "use strict";
+
+        $('#data-tables').dataTable();
+    });
+</script>
+
+<table class="table table-striped" id="data-tables">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Code </th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+        {
+            <tr>
+                <td>@item.Index</td>
+                <td>@item.Data.Name</td>
+                <td>@item.Data.Code</td>
+                <td>@item.Data.Description</td>
+                <td>
+                    <a title="Edit" class="btn vd_btn vd_bg-green btn-xs" onclick="UpdateRecord(@item.Data.Id, this)"><i class='fa fa-pencil'></i></a>
+                    <a title="Delete" class="btn vd_btn vd_bg-red btn-xs" onclick="Delete(@item.Data.Id, this)"><i class='fa fa-times'></i></a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

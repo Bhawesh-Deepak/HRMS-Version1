@@ -1,0 +1,111 @@
+﻿@model IEnumerable<HRMS.Core.Entities.LeadManagement.CustomerDetail>
+
+@{
+    ViewData["Title"] = "Lead Closer ";
+}
+<style>
+    .dataTables_filter .form-control{margin-left:5px}
+    .panel-heading{background:#436eac !important}
+    .table tbody tr td a{color:#436eac !important}
+    .table tbody tr td a .fa{color:#fff !important}
+    .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{background-color:#436eac; border-color:#436eac;}
+    .pagination>li>a, .pagination>li>span{color:#436eac;}
+</style>
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <!--<div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Sales</a> </li>
+                        <li class="active">Lead Closer</li>
+                    </ul>
+
+
+                </div>
+            </div>-->
+            <!-- vd_head-section -->
+
+            <div class="vd_title-section clearfix">
+                <div class="vd_panel-header">
+                    <h1>Lead Closer</h1>
+
+
+                </div>
+                <!-- vd_panel-header -->
+            </div>
+            <!-- vd_title-section -->
+
+            <div class="vd_content-section clearfix">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- begin panel -->
+                        <!-- end panel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading ui-sortable-handle">
+                                <div class="panel-heading-btn">
+
+                                </div>
+                                <h4 class="panel-title"> <span class="fa fa-cloud-upload" style="padding-right: 4px;font-size: 20px;"></span>  Lead Details </h4>
+                            </div>
+                            <div class="panel-body table-responsive">
+                                <table class="table table-striped" id="data-tables">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Leads Name</th>
+                                            <th>Address</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Description/Project</th>
+                                            <th>Special Remarks</th>
+                                            <th>Unique Code</th>
+                                            <th>Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+                                        {
+                                            <tr>
+                                                <td>@item.Index</td>
+                                                <td>
+                                                    <a  href="#" onclick="GetCustomerLCF(@item.Data.Id)">@item.Data.LeadName</a>
+                                                </td>
+                                                <td>@item.Data.Location</td>
+                                                <td>@item.Data.Phone</td>
+                                                <td>@item.Data.Email</td>
+                                                <td>@item.Data.Description_Project</td>
+                                                <td>@item.Data.SpecialRemarks</td>
+                                                <td>@item.Data.EmpCode</td>
+
+                                                <td><a href="~/Documents/LCF.xlsx" download="LCF" class="btn btn-primary btn-xs"><i class="fa fa-download"></i></a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+            <!-- .vd_content-section -->
+
+        </div>
+        <!-- .vd_content -->
+    </div>
+    <!-- .vd_container -->
+</div>
+
+<script>
+    function GetCustomerLCF(id) {
+        alert('ok');
+        $.get("/LeadCloser/GetCustomerLCF", { custid: id }, function (data) {
+            $("#divLeadCreate").html(data);
+            $("#myLeadModal").modal('show');
+            $("#modalTitle").text("Customer LCF Details ")
+        })
+    }
+</script>

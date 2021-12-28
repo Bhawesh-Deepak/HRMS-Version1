@@ -1,0 +1,88 @@
+﻿@model HRMS.Core.Entities.UserManagement.AuthenticateUser
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+              data-ajax-complete="AjaxComplete"
+              asp-action="UpsertRole" asp-controller="RoleMaster" data-ajax-success="Success">
+            <div class="box-body">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="CreatedBy" type="hidden" />
+                        <input asp-for="CreatedDate" type="hidden" />
+                        <label asp-for="UserName">User Name</label>
+                        <input type="text" class="form-control" asp-for="UserName" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Password">Password</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword">Confirm Password</label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="DisplayUserName">Display User Name</label>
+                        <input asp-for="DisplayUserName" class="form-control" />
+                        <span asp-validation-for="DisplayUserName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="RoleId">Select Role</label>
+                        <input asp-for="RoleId" class="form-control" />
+                        <span asp-validation-for="RoleId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="EmployeeId">Select Employee</label>
+                        <input asp-for="EmployeeId" class="form-control" />
+                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="IsLocked">Is Locked</label>
+                        <input asp-for="IsLocked" class="form-control" />
+                        <span asp-validation-for="IsLocked" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary pull-right" value="Save" />
+                    <button class="buttonload" style="display:none">
+                        <i class="fa fa-refresh fa-spin"></i>Loading
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="reset" class="btn btn-danger pull-left">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

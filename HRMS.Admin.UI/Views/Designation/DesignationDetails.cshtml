@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HRMS.Core.ReqRespVm.Response.Master.DesignationDetail>
+
+<table id="tblDataList" class="table table-striped table-bordered responsive" style="width:100%">
+    <thead>
+        <tr>
+            <th>Department</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+        <tr>
+            <td>
+                @data.DepartmentName
+            </td>
+            <td>
+                @data.DesignationName
+            </td>
+            <td>
+                @data.DesignationCode
+            </td>
+            <td>
+                @data.Desscription
+            </td>
+
+            <td>
+                <a class="btn btn-outline-success pull-right" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'  style='color:#DD4B39'></i>" onclick="UpdateRecord(@data.DesignationId, this)">
+                    <i class="fa fa-edit" style="color:#3C8DBC"></i>
+
+                </a>
+
+                <a class="btn btn-outline-danger pull-right" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'  style='color:#DD4B39'></i>" onclick="Delete(@data.DesignationId, this)">
+                    <i class="fa fa-trash" style="color:#DD4B39"></i>
+
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>

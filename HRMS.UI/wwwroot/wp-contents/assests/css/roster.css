@@ -1,0 +1,378 @@
+
+.table-responsive.attendance table {
+	position: relative;
+	display: block;
+	max-height: 303px;
+	overflow: scroll;
+	border-collapse: inherit;
+	margin-bottom: 0px;
+}
+
+.table-responsive.attendance thead {
+	position: relative;
+	overflow: visible;
+	z-index: 3;
+}
+
+	.table-responsive.attendance thead th {
+		background-color: #f1f3f6;
+		height: 32px;
+		padding: 3px 15px 0;
+		font-size: 13px;
+		vertical-align: top;
+		position: relative;
+		text-align:center;
+	}
+
+		.table-responsive.attendance thead th p {
+			margin: 5px 0;
+			font-weight: 400
+		}
+
+		.table-responsive.attendance thead th:nth-child(1) {
+			min-width: 200px;
+			position: relative;
+			z-index: 99
+		}
+
+		/*.table-responsive.attendance thead th:nth-child(2) {
+			position: relative;
+			z-index: 99;
+			border-top: none;
+			left: 0
+		}*/
+
+			.table-responsive.attendance thead th:nth-child(1), .table-responsive.attendance thead th:nth-child(2), .table-responsive.attendance thead th:nth-child(3) {
+				border-top: none !important;
+				left: 0
+			}
+
+	.table-responsive.attendance thead tr {
+		position: relative;
+		top: 0
+	}
+
+.table-responsive.attendance tbody td {
+	background-color: #fff;
+	padding: 8px 1px;
+	font-size: 13px
+}
+.table-responsive.attendance tbody tr td:nth-child(1)/*, .table-responsive.attendance tbody tr td:nth-child(2)*/ {
+	position: relative;
+	z-index: 2;
+	text-align: left;
+	background-color: #f1f3f6;
+	left: 0
+}
+.table-responsive.attendance tbody tr td:nth-child(2), .table-responsive.attendance tbody tr td:nth-child(3) {
+	background-color: #f1f3f6;
+	
+	left: 0
+}
+	.table-responsive.attendance tbody tr td:nth-child(1) img {
+		margin-right: 5px;
+	}
+
+
+
+
+.statusBox {
+	display: block
+}
+
+	.statusBox ul {
+		padding: 0;
+		margin: 0;
+		list-style: none
+	}
+
+		.statusBox ul li {
+			padding: 0 5px;
+			margin-bottom: 15px;
+			display: inline-block
+		}
+
+
+.attendanceLegend {
+	width: 25%;
+	font-size: 77%;
+	vertical-align: top;
+}
+
+.statusBox label.allTeam {
+	margin-top: 5px;
+	display: inherit;
+	font-weight: normal;
+}
+	.statusBox label.allTeam input[type=checkbox] {
+		display: inline-block;
+		width: inherit;
+		line-height: normal;
+		height: inherit;
+	}
+	.statusBox label.allTeam span {
+		padding-left: 5px;
+	}
+
+	@media screen and (max-width:480px) {
+		.attendanceLegend {
+		width: 50%;
+	}
+}
+.attendanceLegend .table{margin-bottom:5px;}
+.tdWidth20 {
+	width: 20px;
+	text-align: center
+}
+
+/*.table.atndanceCalendar td {
+	background-color: purple;
+	color: green;
+}*/
+.tdSelected {
+	background: #ffa399 !important;
+}
+
+/*.table.atndanceCalendar td:hover {
+	background-color: #ffa399;
+	
+}*/
+
+.table.atndanceCalendar td a {
+	display: block;
+	width: 100%;	
+}
+.table.atndanceCalendar td {
+	max-width: 14.2857%;
+	text-align: center;
+}
+.table.atndanceCalendar th {
+	max-width: 14.2857%;
+	text-align: center;
+	padding: 3px;
+}
+
+.tdCalenderDate {	
+	max-width: 14.2857%;
+	height: 20px;	
+}
+
+.tdCalender {	
+	max-width: 14.2857%;
+	height: 20px;	
+}
+
+.empexit {
+    background: #f9968c !important;
+}
+.noday {
+	background: #f1f3f6 !important;
+	color:gainsboro;
+}
+.regularize-applied {
+    background: #ffb0fb !important;
+}
+.regularize-approved {
+	background: #3498db !important;
+	color: white;
+}
+.weekoff {
+    background: #fcffa6 !important;
+}
+
+.holiday {
+    background: #bfdbf5 !important;
+}
+
+.leave-applied {
+	background: #d7d7d7 !important;
+	color: white;
+}
+
+.leave-approved {
+	background: #9b59b6 !important;
+	color: white;
+}
+
+.late-coming-applied {
+	background: #8a9885 !important;
+	color: white;
+}
+
+.late-coming-approved {
+	background: #5e8452 !important;
+	color: white;
+}
+
+.early-going-applied {
+	background: #e0b793 !important;
+	color: white;
+}
+
+.early-going-approved {
+	background: #e67e22 !important;
+	color: white;
+}
+
+.cmpansatoryOff {
+    background: #e74c3c !important;
+}
+
+.present {
+    background: #64cc34 !important;
+}
+
+.absent {
+    background: #e74c3c !important;
+}
+
+.P {
+    color: #62cb31;
+}
+
+    .P:after {
+        content: "\f00c";
+    }
+
+.A {
+    color: #e74c3c;
+}
+
+    .A:after {
+        content: "\f00d";
+    }
+
+.L {
+    color: #e74c3c;
+}
+
+    .L:after {
+        content: "\f111";
+    }
+
+.R {
+    color: #ffb606;
+}
+
+    .R:after {
+        content: "\f111";
+    }
+
+.rosterTable {
+    padding-top: 5px;
+}
+
+.rosterimgwidth {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%
+}
+.loaderwidth {
+    width: 50px;
+    height: 50px;    
+    border-radius: 50%
+}
+.notificationImgWidth {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%
+}
+.setWidth {
+    min-width: 200px;
+}
+.setBold {
+    font-weight: bold;
+}
+.setCentre {
+    text-align: center;
+}
+
+.hideContent {
+	display: none
+}
+
+.verySmall {
+	
+	font-size:xx-small;
+}
+.setError {
+	color: #e74c3c;
+	margin: 1px 1px 1px 1px !important;
+	font-weight: 400 !important;
+	font-size:smaller;
+}
+.myModal .modal-dialog .modal-content .modal-body .insufficientAppliedDays {
+	padding: 20px 10px;
+	border-radius: 5px;
+	border: 1px solid #e74c3c;
+	color: #e74c3c
+}
+
+	.myModal .modal-dialog .modal-content .modal-body .insufficientAppliedDays h4 {
+		margin: 0;
+		font-size: 30px
+	}
+.setMarginBottomNone {
+    margin-bottom: 0px;
+}
+.borderNone{border-top:none !important;border-bottom:none !important;}
+.borderBottom {
+    border-bottom: none !important;
+}
+.td-compact {
+    padding: 3px !important;
+}
+
+.text-purple {
+    color: #9b59b6 !important;
+}
+#downloadexcel button {
+    background-color: #34495e;
+    border-color: #34495e;
+    color: #fff;
+    border-radius: 3px;
+    
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 23px;
+}
+.statusBox ul li {    
+     margin-bottom: 0px;    
+}
+.statusBox .btn-group {
+    margin-bottom: 7px;
+}
+
+
+#downloadexcelTable button {
+    background-color: #34495e;
+    border-color: #34495e;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.table-responsive.rosterTable thead th{text-align:left;}
+.table-responsive.rosterTable tbody td {
+    text-align: left;
+}
+.table-responsive.rosterTable tbody td:first-child{font-weight:bold;}
+
+
+
+
+
+/*.btn-xs {
+    border-radius: 3px;
+    font-size: 7px;
+    line-height: 1.5;
+    padding: 1px 4px;
+}*/

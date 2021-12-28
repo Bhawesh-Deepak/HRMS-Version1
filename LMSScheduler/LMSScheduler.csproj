@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HRMS.Core.Entities\HRMS.Core.Entities.csproj" />
+    <ProjectReference Include="..\HRMS.Core.Helpers\HRMS.Core.Helpers.csproj" />
+    <ProjectReference Include="..\HRMS.Core.ReqRespVm\HRMS.Core.ReqRespVm.csproj" />
+    <ProjectReference Include="..\HRMS.Services.Implementation\HRMS.Services.Implementation.csproj" />
+    <ProjectReference Include="..\HRMS.Services.Repository\HRMS.Services.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

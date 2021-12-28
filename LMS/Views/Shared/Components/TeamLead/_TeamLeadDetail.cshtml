@@ -1,0 +1,74 @@
+﻿@model IEnumerable<HRMS.Core.ReqRespVm.Response.Leads.LeadsBySupervisorVM>
+    <style>
+        .overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: rgba(255,255,255,0.8) url("loader.gif") center no-repeat;
+        }
+        /* Turn off scrollbar when body element has the loading class */
+        body.loading {
+            overflow: hidden;
+        }
+            /* Make spinner image visible when body element has the loading class */
+            body.loading .overlay {
+                display: block;
+            }
+
+          .modal-lg{width:1200px !important;}
+          .modal-footer .vd_bg-red, .modal-footer .vd_bg-green{background:#436eac !important; box-shadow:none}
+          .modal-footer .vd_bg-red:hover, .modal-footer .vd_bg-green:hover{background:#1b9859 !important}
+    </style>
+
+    <div class="panel-body table-responsive">
+        <table class="table table-striped" id="data-tables">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Level</th>
+                    <th>Lead</th>
+                    <th>Calling</th>
+                    <th>Pending</th>
+                    <th>Not Interested</th>
+                    <th>Hot</th>
+                    <th>Warm</th>
+                    <th>Cold</th>                    
+                    <th>Lead Convert To Client</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="javascript:void(0)" onclick="GetEmployeeLeads(@item.employeeId)">@item.employeeName</a>
+                        </td>
+                        <td>@item.Level</td>
+                        <td><a>@item.Leads</a></td>
+                        <td><a>@item.Called</a></td>
+                        <td><a>@item.Pending</a></td>
+                        <td><a>@item.NotInterested</a></td>
+                        <td><a>@item.Hot</a></td>
+                        <td><a>@item.Warm</a></td>
+                        <td><a>@item.Cold</a></td>                        
+                        <td><a>@item.LeadConvertedToClient</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        function GetEmployeeLeads(Id) {
+            $.get("/Home/GetEmployeeLeadsDetails", { employeeId: Id }, function (response) {
+                $("#modalTitle").text("Leads Details by Employee");
+                $(".modal-dialog").addClass("modal-lg");
+                $("#divLeadCreate").html(response);
+                $('#myLeadModal').modal({ backdrop: 'static' });
+            });
+        }
+    </script>
+

@@ -1,0 +1,161 @@
+﻿@model AuthenticateModel
+
+
+@{
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from admin.pixelstrap.com/viho/theme/login_one.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Nov 2021 04:58:48 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="~/wp-contents/login//assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/wp-contents/login//assets/images/favicon.png" type="image/x-icon">
+    <title>Authenticate || Lead Managent System </title>
+    <!-- Google font-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/wp-contents/login//assets/css/bootstrap.css">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="~/wp-contents/login//assets/css/style.css">
+    <link id="color" rel="stylesheet" href="~/wp-contents/login//assets/css/color-1.css" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="~/wp-contents/login//assets/css/responsive.css">
+    <style>
+        .was-validated .form-control:invalid, .form-control.is-invalid {border-color: #dc3545 !important;}
+    </style>
+</head>
+<body>
+    <!-- Loader starts-->
+    <div class="loader-wrapper">
+        <div class="theme-loader">
+            <div class="loader-p"></div>
+        </div>
+    </div>
+    <!-- Loader ends-->
+    <!-- page-wrapper Start-->
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-7"><img class="bg-img-cover bg-center" src="~/wp-contents/login//assets/images/login/2.jpg" alt="looginpage"></div>
+                <div class="col-xl-5 p-0">
+                    <div class="login-card" id="loginpage">
+
+                        <form class="theme-form login-form needs-validation" novalidate="" method="post" asp-controller="Authenticate" asp-action="Login">
+                            <div class="text-center"><img src="~/images/mainkudo.png" width="45%"/></div>
+                            <hr />
+                            <div class="text-center"><h4>Login</h4></div>
+                            <hr />
+                            <!--<h6>Welcome back! Log in to your account.</h6>-->
+                            <div class="form-group">
+                                <label>User Name</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    <input class="form-control" type="text" required="" name="UserName" placeholder="User Name">
+                                    <!--<div class="invalid-tooltip">Please enter proper UserName.</div>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    <input class="form-control" type="password" name="password" required="" placeholder="*********">
+                                    <!--<div class="invalid-tooltip">Please enter proper Password.</div>
+                                    <div class="show-hide"><span class="show"></span></div>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <a class="link" href="#">Forgot password?</a>
+                                </div> <button class="btn btn-primary btn-block" type="submit">Login</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                    <div class="login-card" id="forgetpss" style="display:none">
+
+                        <form class="theme-form login-form needs-validation" novalidate="" method="post" asp-controller="Authenticate" asp-action="Login">
+                            <div class="text-center"><img src="~/images/mainkudo.png" width="45%" /></div>
+                            <hr />
+                             <div class="text-center"><h4>Forgot Password</h4></div>
+                            <hr />
+                            <!--<h6>Welcome back! Log in to your account.</h6>-->
+                            <div class="form-group">
+                                <label>Email Id</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    <input class="form-control" type="text" required="" asp-for="EmailId"  placeholder="Email Id"><br/>
+                                    
+                                    <span asp-validation-for="EmailId" class="text-danger"></span>
+
+                                    <!--<div class="invalid-tooltip">Please enter proper UserName.</div>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <a class="link" href="javascript:void(0)" onclick="BTL()">Forgot password?</a>
+                                </div> <button class="btn btn-primary btn-block"  type="submit">Login</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page-wrapper end-->
+    <!-- latest jquery-->
+    <script src="~/wp-contents/login//assets/js/jquery-3.5.1.min.js"></script>
+    <!-- feather icon js-->
+    <script src="~/wp-contents/login//assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="~/wp-contents/login//assets/js/icons/feather-icon/feather-icon.js"></script>
+    <!-- Sidebar jquery-->
+    <script src="~/wp-contents/login//assets/js/sidebar-menu.js"></script>
+    <script src="~/wp-contents/login//assets/js/config.js"></script>
+    <!-- Bootstrap js-->
+    <script src="~/wp-contents/login//assets/js/bootstrap/popper.min.js"></script>
+    <script src="~/wp-contents/login//assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- Plugins J start-->
+    <!-- Plugins JS Ends-->
+    <!-- Theme js-->
+    <script src="~/wp-contents/login//assets/js/script.js"></script>
+    <!-- login js-->
+    <!-- Plugin used-->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script>
+        function ChangeDiv() {
+            $("#loginpage").css('display', 'none');
+            $("#forgetpss").css('display', 'block');
+        }
+        function BTL() {
+            $("#forgetpss").css('display', 'none');
+            $("#loginpage").css('display', 'block');
+        }
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
+ 

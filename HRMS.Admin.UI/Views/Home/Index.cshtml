@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+@using System.Globalization;
+
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div class="row">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="divModuleDetails">
+
+            </div>
+        </div>
+        <div class="col-md-12">
+
+            <div class="col-md-6">
+
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Fee Report</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Class Wise Strength</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Today Strength </h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Student Strength Month Wise</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Year</label>
+                                    <select class="form-control" id="ddlYear">
+                                        <option value="0">Select</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Month</label>
+                                    <select class="form-control" id="ddlMonth" onchange="GetStudentDetailsMonthWise()">
+                                        <option>Select</option>
+                                       
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Day</label>
+                                    <select class="form-control" id="ddlDay">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>

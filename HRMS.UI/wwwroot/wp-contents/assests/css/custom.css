@@ -1,0 +1,2127 @@
+select {
+    padding: 6px 25px 6px 8px !important;
+    background: url(../images/arrow.png) no-repeat scroll right center #fff !important;
+    appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none
+}
+
+::-moz-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255,255,255,0.1);
+    position: absolute;
+    z-index: 10000;
+    right: 0
+}
+
+::-moz-scrollbar-thumb {
+    background-color: #BCBCBC
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255,255,255,0.1);
+    position: absolute;
+    z-index: 10000
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #BCBCBC
+}
+
+.form-control {
+    font-weight: 400
+}
+
+.btn {
+    outline: none !important
+}
+
+#logo {
+    padding: 6px 10px 0 18px
+}
+
+
+	#logo img {
+		width: 160px;
+		position: relative;
+		top: 5px;
+		left: -8px;
+	}
+
+.small-logo {
+    padding-top: 15px
+}
+
+    .small-logo img {
+        width: 125px
+    }
+
+.notificationImgWidth {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    position: absolute;
+    top: 26%;
+}
+
+#wrapper {
+    margin: 0 0 0 245px;
+    transition: .2s
+}
+
+
+
+    #wrapper .content .top-boxes {
+        min-height: 105px
+    }
+
+        #wrapper .content .top-boxes .pe-7s-users {
+            font-size: 50px
+        }
+
+        #wrapper .content .top-boxes .fa-external-link {
+            font-size: 20px;
+            position: relative;
+            top: 5px
+        }
+
+        #wrapper .content .top-boxes p {
+            padding-top: 10px
+        }
+
+        #wrapper .content .top-boxes a {
+            padding-top: 5px;
+            display: inline-block
+        }
+
+#calendar h2 {
+    font-size: 16px;
+    line-height: inherit
+}
+
+.padd-left-5, {
+    padding-left: 5px
+}
+
+.padd-right-5 {
+    padding-right: 5px
+}
+
+#menu {
+    width: 245px;
+    transition: .2s
+}
+.hbuilt .font-icon-name.team {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 40px;
+}
+
+.hpanel {
+	position: relative
+}
+	.hpanel .panel-body.teamCount{padding:10px;}
+		.hpanel .panel-body.teamCount h3{margin :0px;}
+		.hpanel .panel-body.teamCount h4 {
+			margin: 0px;
+			font-size: 14px;
+			position: relative;
+			top: 5px;
+		}
+		.hpanel > .panel-heading .font-icon-name i {
+			font-size: 22px;
+			position: relative;
+			top: 5px
+		}
+
+.content {
+    padding: 15px 15px 30px
+}
+
+.labelDetails {
+    margin-bottom: 30px;
+    display: block
+}
+
+    .labelDetails label {
+        margin: 0;
+        color: #62cb31;
+        font-size: 14px;
+        font-weight: 400
+    }
+
+    .labelDetails h4 {
+        font-size: 16px;
+        font-weight: 400;
+        word-wrap: break-word
+    }
+
+.verticalTabsBox {
+    display: block;
+    border: 1px solid #eaeaea
+}
+
+    .verticalTabsBox .nav-tabs > li.active a {
+        background: #f7f8fa;
+        border-radius: 0;
+        border-left: 0
+    }
+
+    .verticalTabsBox .nav-tabs > li.active:first-child a {
+        border-top: 0
+    }
+
+    .verticalTabsBox .panel-body {
+        border-top: none !important;
+        border-bottom: none !important;
+        background: #f7f8fa
+    }
+
+    .verticalTabsBox .chat-discussion {
+        padding: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        position:relative;
+    }
+
+        .verticalTabsBox .chat-discussion .chat-message {
+            padding: 0;
+            margin-bottom: 15px;
+            position:relative;
+        }
+
+
+            .verticalTabsBox .chat-discussion .chat-message .chatMessageBackgroundColor {
+                padding-top: 15px;
+                border-left: 3px solid transparent;
+                padding-left: 5px;
+                margin-bottom: -1px;
+                border: 1px solid #eaeaea !important;
+                background: #fff;
+                border-radius: 4px;
+            }
+            .verticalTabsBox .chat-discussion .chat-message .chatMessageBackgroundColorApproval {
+                border-left: 3px solid #74d348 !important;
+                padding-left: 5px;
+                margin-bottom: -1px;
+                border: 1px solid #eaeaea;
+                padding-top: 15px;
+                background: #fff;
+                border-radius:4px;
+            }
+.verticalTabsBox .chat-discussion .message {
+    padding: 0 0 15px;
+    background: none
+}
+
+            .verticalTabsBox .chat-discussion .message .row {
+                overflow: hidden
+            }
+
+            .verticalTabsBox .chat-discussion .message p {
+                font-size: 13px
+            }
+
+           .verticalTabsBox .chat-discussion .message span {
+                padding-right: 20px;
+                color: #62cb31;
+                line-height: 25px;
+                font-size: 13px
+            }
+    .verticalTabsBox .chat-discussion .message label i{
+        font-weight: normal
+    } 
+                .absenet-circle {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 100%;
+                    border: 5px solid #64cc34;
+                    text-align: center;
+                    display: inline-block;
+                    font-size: 20px;
+                    font-weight: 700;
+                    padding-top: 10px
+                }
+
+.leave-symbol ul li {
+    list-style: none;
+    float: left;
+    padding-right: 10px;
+    width: 25%;
+    white-space: nowrap;
+}
+
+.leave-symbol ul {
+    padding: 0;
+    width: 100%;
+    float: right
+}
+
+    .leave-symbol ul.box-bg {
+        display: block
+    }
+
+        .leave-symbol ul.box-bg li {
+            font-size: 12px
+        }
+
+            .leave-symbol ul.box-bg li em {
+                width: 10px;
+                height: 10px;
+                border-radius: 0
+            }
+
+.leave-approved-att {
+    background: #b792c5;	
+}
+
+.leave-symbol ul.box-bg li em.week-off {
+    background: #fcffa6
+}
+
+.leave-symbol ul.box-bg li em.holiday {
+    background: #bfdbf5
+}
+
+.leave-symbol ul li em {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 5px
+}
+
+    .leave-symbol ul li em.absent {
+        background: none !important;
+        position:relative;
+    }
+        .leave-symbol ul li em.absent:before, .leave-symbol ul li em.absent:after {
+            position: absolute;
+            left: 3px;
+            content: ' ';
+            height: 11px;
+            width: 2px;
+            background-color: #e74c3c;
+        }
+
+            .leave-symbol ul li em.absent:before {
+                transform: rotate(45deg);
+            }
+
+                .leave-symbol ul li em.absent:after {
+                    transform: rotate(-45deg);
+                }
+    .leave-symbol ul li em.absent-halfday {
+        border: 1px solid #e74c3c;
+        background: linear-gradient(to left, #e74c3c 50%, #fff 50%) !important;
+    }
+    .leave-symbol ul li em.absent-fullday {
+        background: #e74c3c;
+    }
+    .leave-symbol ul li em.leave-halfday {
+        border: 1px solid #9b59b6;
+        background: linear-gradient(to left, #9b59b6 50%, #fff 50%) !important;
+    }
+    .leave-symbol ul li em.leave-fullday {
+        background: #9b59b6;
+    }
+    .leave-symbol ul li em.leave-applied {
+        background: #d7d7d7
+    }
+
+    .leave-symbol ul li em.leave-approved {
+        background: #9b59b6
+    }
+
+    .leave-symbol ul li em.late-coming-applied {
+        background: #8a9885;
+    }
+    .leave-symbol ul li em.late-coming-approved {
+        background: #5e8452
+    }
+
+    .leave-symbol ul li em.early-going-applied {
+        background: #e0b793;
+    }
+
+    .leave-symbol ul li em.early-going-approved {
+        background: #e67e22
+    }
+
+    .leave-symbol ul li em.present {
+        background: #64cc34 !important
+    }
+
+    .leave-symbol ul li em.regularize-applied {
+        background: #ffb0fb;
+    }
+    .leave-symbol ul li em.regularize-approved {
+        background: #3498db;
+    }
+
+    .leave-symbol ul li em.half-day {
+        background: linear-gradient(90deg,#64cc34 60%,#FFF 40%);
+        border: 1px solid #64cc34
+    }
+
+.leave-btns {
+    padding-bottom: 10px;
+    display: block;
+    overflow: hidden
+}
+.notestyle {
+   color:red;
+   font-style:italic;
+}
+.holiday-symbol {
+    position: absolute;
+    top: -2px;
+    right: 14px
+}
+
+    .holiday-symbol button {
+        padding: 2px
+    }
+
+.my-attendense .leave-btns .w-lg {
+    margin-bottom: 10px
+}
+
+.pendingTasksBox {
+    display: block
+}
+
+    .pendingTasksBox .chat-message {
+        padding: 0 10px
+    }
+
+    .pendingTasksBox .chat-discussion {
+        padding: 0;
+        overflow: hidden;
+        overflow-y: auto
+    }
+
+        .pendingTasksBox .chat-discussion .message {
+            padding: 0 0 15px;
+            background: none
+        }
+
+    .pendingTasksBox p {
+        text-align: justify
+    }
+
+.recent-activites .p-sm {
+    padding: 0 !important
+}
+
+.recent-activites .v-timeline {
+    margin: 0
+}
+
+.recent-activites .vertical-timeline-content p {
+    margin: 0
+}
+
+.recent-activites .vertical-timeline-content {
+    border: none
+}
+
+.recent-activites .vertical-timeline-icon {
+    border: none;
+    height: 20px !important
+}
+
+.recent-activites .v-timeline::before {
+    left: 19px;
+    width: 2px
+}
+
+.recent-activites .p-sm span {
+    color: #cecdcd
+}
+
+.recent-activites .p-sm .vertical-timeline-content:before {
+    display: none !important
+}
+
+.recent-activites .vertical-timeline-content:after, .vertical-timeline-content:before {
+    display: none !important
+}
+
+.recent-activites .vertical-timeline-content {
+    margin-left: 30px
+}
+
+/*.statusBox {
+    display: block
+}
+
+    .statusBox ul {
+        padding: 0;
+        margin: 0;
+        list-style: none
+    }
+
+        .statusBox ul li {
+            padding: 0 5px;
+            margin-bottom: 15px;
+            display: inline-block
+        }*/
+
+.checkoutAttendence {
+    display: block
+}
+
+    .checkoutAttendence label {
+        width: 100%
+    }
+
+    .checkoutAttendence .form-control {
+        background: #eaeaea !important
+    }
+
+.deduction .tableBox {
+    border: 0
+}
+
+    .deduction .tableBox tbody tr td .tdBox {
+        height: 54px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center
+    }
+
+    .deduction .tableBox thead tr td {
+        padding: 0;
+        border: 1px solid #fff;
+        border-bottom: 1px solid #ddd;
+        text-align: left
+    }
+
+.deduction .radio {
+    margin: 0
+}
+
+.tdBox .text-success {
+    color: #62cb31 !important
+}
+
+.tdBox .text-info {
+    color: #3498db !important
+}
+
+.mediclaimBox {
+    height: 54px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center
+}
+
+.btn-group .fa-calendar {
+    color: #62cb31;
+    vertical-align: middle;
+    font-size: 16px
+}
+
+.taxBox .btn-group {
+    position: absolute;
+    right: 0
+}
+
+.taxBox h4 {
+    line-height: 26px
+}
+
+.taxBox h5 {
+    line-height: 22px
+}
+
+.taxBox .width100 {
+    padding: 30px 0;
+    width: 100%;
+    display: block;
+    overflow: hidden
+}
+
+.btnDownload {
+    margin-top: 20px;
+    width: 90px
+}
+
+.taxBox .calculatBox {
+    padding: 30px 0;
+    width: 100%;
+    display: block;
+    overflow: hidden
+}
+
+    .taxBox .calculatBox .calculatBoxInner {
+        padding: 15px;
+        margin-top: 20px;
+        width: 100%;
+        display: inline-block;
+        background: #fff;
+        text-align: center;
+        position: relative;
+        height: 240px
+    }
+
+        .taxBox .calculatBox .calculatBoxInner.icon:after {
+            content: "\f068";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            font-family: 'FontAwesome';
+            color: #3498db
+        }
+
+        .taxBox .calculatBox .calculatBoxInner .grossBox {
+            position: relative
+        }
+
+            .taxBox .calculatBox .calculatBoxInner .grossBox.icon p {
+                height: 55px
+            }
+
+            .taxBox .calculatBox .calculatBoxInner .grossBox.icon:after {
+                content: "\f067";
+                position: absolute;
+                right: -20px;
+                top: 2px;
+                font-family: 'FontAwesome';
+                color: #3498db;
+                font-size: 12px
+            }
+
+            .taxBox .calculatBox .calculatBoxInner .grossBox .btnDownload {
+                margin: 5px 0 20px
+            }
+
+            .taxBox .calculatBox .calculatBoxInner .grossBox em {
+                font-size: 18px;
+                position: absolute;
+                right: -5px;
+                top: 0;
+                color: #74d348
+            }
+
+.taxBox .tab-pane .panel-body {
+    border-top: 1px solid #eaeaea
+}
+
+.taxBox .table > thead > tr > th {
+    padding: 8px 30px 8px 8px;
+    position: relative
+}
+
+    .taxBox .table > thead > tr > th em {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 22px
+    }
+
+.taxBox .table-striped > tbody > tr.success:nth-of-type(15) td, .taxBox .table-striped > tbody > tr.success:nth-of-type(23) td {
+    background: #5cb85c !important;
+    color: #fff
+}
+
+.taxBox .table-striped > tbody > tr td {
+    white-space: nowrap
+}
+
+.hpanel .panel-footer {
+    overflow: hidden;
+}
+.loginBg {
+    background: #fff;
+    overflow: hidden
+}
+
+    .loginBg .pd0 {
+        padding: 0
+    }
+
+.logoBox {
+    background: url(../images/hrbg.jpg) no-repeat;
+    color: #fff;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: 100vh;
+    position: relative
+}
+
+    .logoBox ul {
+        padding: 0;
+        margin-top: 30px;
+        list-style: none
+    }
+
+        .logoBox ul li {
+            padding-left: 20px;
+            margin-top: 35px;
+            position: relative;
+            display: block;
+            text-align: left;
+            font-size: 14px
+        }
+
+            .logoBox ul li:before {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                content: '';
+                width: 10px;
+                height: 10px;
+                border: 1px solid #fff;
+                border-radius: 100%
+            }
+
+    .logoBox img {
+        margin: 0px !important; position:relative; left:20px;
+        width: 100%;
+        max-width: 250px
+    }
+
+.loginBox {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: center
+}
+
+    .loginBox .loginInnerBox {
+        width: 100%;
+        max-width: 350px;
+        display: block;
+        overflow: hidden;
+        color: #fff;
+        text-align: center
+    }
+
+        .loginBox .loginInnerBox h3 {
+            margin-bottom: 20px;
+            color: #57b432;
+            text-align: left;
+            font-size: 20px
+        }
+
+        .loginBox .loginInnerBox p a {
+            color: #57b432;
+            text-decoration: none
+        }
+
+        .loginBox .loginInnerBox input {
+            height: 45px;
+            box-shadow: none;
+            border-color: #d0d0d0
+        }
+
+            .loginBox .loginInnerBox input:focus {
+                border-color: #57b432
+            }
+
+        .loginBox .loginInnerBox .loginBtn {
+            margin: 10px 0 15px;
+            width: 100%;
+            background: #57b432;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: none;
+            height: 42px;
+            font-size: 14px
+        }
+
+        .loginBox .loginInnerBox .btn-outline {
+            margin-bottom: 15px;
+            width: 100%;
+            color: #57b432;
+            border: 1px solid #d0d0d0;
+            background: none;
+            transition: .2s;
+            line-height: 26px;
+            box-shadow: none;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+            .loginBox .loginInnerBox .btn-outline:hover {
+                background: #57b432;
+                transition: .2s;
+                color: #fff;
+                border: 1px solid #57b432
+            }
+
+.rbc-show-more {
+    display: none
+}
+
+.fc-event-container .fc-event {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 4px;
+    text-align: left;
+    float: left;
+    background: #c33;
+    border: 0;
+    margin-top: 15px
+}
+
+.fc-ltr .fc-basic-view .fc-day-number {
+    text-align: right
+}
+
+.fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+    padding: 0
+}
+
+.divFloatLeft {
+    float: left !important
+}
+
+.fc-event-container .fc-event.present {
+    background: #64cc34
+}
+
+.fc-event-container .fc-event.absent {
+    background: #e74c3c
+}
+
+.fc-event-container .fc-event.leave-applied {
+    background: #d7d7d7
+}
+
+.fc-event-container .fc-event.leave-approved {
+    background: #9b59b6
+}
+
+.fc-event-container .fc-event.late-coming-applied {
+    background: #8a9885
+}
+
+.fc-event-container .fc-event.late-coming-approved {
+    background: #5e8452
+}
+
+.fc-event-container .fc-event.early-going-applied {
+    background: #e0b793
+}
+
+.fc-event-container .fc-event.early-going-approved {
+    background: #e67e22
+}
+
+.fc-event-container .fc-event.outdoor-approved {
+    background: #ffb606
+}
+
+.fc-event-container .fc-event.half-day {
+    background: #64cc34
+}
+
+.fc-sun {
+    background-color: #DFE8EC
+}
+
+.modal-headercolor {
+    background-color: #2F82A4 !important;
+    color: #fff;
+    font-size: 15px !important
+}
+
+.closebtn {
+    color: #fff !important;
+    opacity: 1
+}
+
+.float-e-margins .btn {
+    font-size: 11px
+}
+
+.modal.holiday-list {
+    width: 100%
+}
+
+    .modal.holiday-list .modal-dialog .modal-content .modal-header {
+        background: #2f82a3;
+        color: #fff;
+        padding: 8px
+    }
+
+        .modal.holiday-list .modal-dialog .modal-content .modal-header h4 i {
+            padding-right: 5px
+        }
+
+    .modal.holiday-list .modal-content .modal-title {
+        font-size: 15px
+    }
+
+    .modal.holiday-list .modal-body .leaveApplicationRightSection table thead tr th {
+        font-size: 15px
+    }
+
+.myModal .modal-dialog {
+    max-width: 85% !important;
+    font-size: 14px;
+    width: 100%;
+    background: #fff;
+    color: #6a6c6f;
+    border-radius: 5px;
+    overflow: hidden
+}
+
+.myModal.holidayModal .modal-dialog {
+    max-width: 55% !important
+}
+
+.myModal.sickLeave .modal-dialog {
+	max-width: 75% !important
+}    
+    .myModal.holidayModal .modal-dialog .rw-popup {
+        box-shadow: none
+    }
+
+.myModal .modal-dialog .modal-content {
+    border-radius: 0;
+    border: none;
+    box-shadow: none
+}
+
+    .myModal .modal-dialog .modal-content .modal-header {
+        padding: 15px 10px 15px 50px;
+        position: relative;
+        color: #6a6c6f
+    }
+
+        .myModal .modal-dialog .modal-content .modal-header h4 {
+            font-size: 18px
+        }
+
+        .myModal .modal-dialog .modal-content .modal-header button {
+            color: #000;
+            outline: none;
+            opacity: 1;
+            font-size: 25px
+        }
+
+        .myModal .modal-dialog .modal-content .modal-header i {
+            font-size: 25px;
+            position: absolute;
+            left: 20px;
+            top: 15px
+        }
+
+    .myModal .modal-dialog .modal-content .modal-body {
+        padding: 20px
+    }
+
+        .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection {
+            display: block
+        }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .modalBtnResize {
+                color: #fff;
+                background: #62cb31;
+                border: none;
+                outline: none
+            }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection label {
+                font-size: 14px;
+                font-weight: 400
+            }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .dateBox {
+                border-right: 0
+            }
+
+        .myModal .modal-dialog .modal-content .modal-body .leaveApplicationCount {
+            padding: 20px 10px;
+            border-radius: 5px;
+            border: 1px solid #62cb31;
+            color: #62cb31
+        }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveApplicationCount h4 {
+                margin: 0;
+                font-size: 30px
+            }		
+
+        .myModal .modal-dialog .modal-content .modal-body .leaveCountTableSection {
+            margin-top: 10px
+        }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveCountTableSection label {
+                font-weight: 400
+            }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveCountTableSection table {
+                background: #f6f6f6
+            }
+
+                .myModal .modal-dialog .modal-content .modal-body .leaveCountTableSection table a {
+                    color: #62cb31
+                }
+
+        .myModal .modal-dialog .modal-content .modal-body .showApproverDiv {
+            display: block
+        }
+
+            .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverBox {
+                padding: 5px 0 10px;
+                background: #f6f6f6;
+                border-radius: 3px;
+                border: 1px solid #ddd
+            }
+
+                .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverBox hr {
+                    margin-bottom: 10px;
+                    margin-top: 13px
+                }
+
+            .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverSteps {
+                position: relative
+            }
+
+                .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverSteps h4 {
+                    padding-left: 40px;
+                    font-size: 14px
+                }
+
+                    .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverSteps h4 i {
+                        font-size: 25px;
+                        position: absolute;
+                        left: 9px;
+                        top: 10px
+                    }
+
+                .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverSteps p {
+                    padding-left: 10px;
+                    margin: 0
+                }
+
+        .myModal .modal-dialog .modal-content .modal-body .input-group-addon {
+            border-left: 0;
+            background: none
+        }
+
+        .myModal .modal-dialog .modal-content .modal-body .glyphicon.glyphicon-calendar {
+            color: #62cb31
+        }
+
+        .myModal .modal-dialog .modal-content .modal-body .glyphicon.glyphicon-time {
+            color: #62cb31
+        }
+
+        .myModal .modal-dialog .modal-content .modal-body .spanApply {
+            float: right;
+            margin-top: -13px
+        }
+
+        .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .table {
+            margin-bottom: 0
+        }
+
+        .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .pagination {
+            margin: 4px 0 0
+        }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .pagination a {
+                color: #6a6c6f
+            }
+
+            .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+                color: #fff;
+                background: #62cb31;
+                border: 1px solid #62cb31
+            }
+
+        .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .padd-right0 {
+            padding-right: 0
+        }
+
+.myModal.myModal2 .modal-dialog {
+    width: 700px
+}
+
+    .myModal.myModal2 .modal-dialog .modal-content .modal-body .leaveApplicationCount {
+        padding: 15px 10px;
+        margin-bottom: 10px
+    }
+
+    .myModal.myModal2 .modal-dialog .modal-content .modal-body .modalBtnResize {
+        color: #fff;
+        background: #62cb31;
+        border: none;
+        outline: none;
+        float: left
+    }
+
+.myModal.myModal3 .modal-dialog {
+    width: 700px
+}
+
+    .myModal.myModal3 .modal-dialog .modal-content .modal-body label {
+        font-size: 14px;
+        font-weight: 400
+    }
+
+    .myModal.myModal3 .modal-dialog .modal-content .modal-body .table-responsive table thead tr th {
+        border: none
+    }
+
+    .myModal.myModal3 .modal-dialog .modal-content .modal-body .table-responsive table tbody tr td {
+        border: none
+    }
+
+    .myModal.myModal3 .modal-dialog .modal-content .modal-body .table-responsive table thead tr:nth-child(odd) {
+        background: #f6f6f6
+    }
+
+    .myModal.myModal3 .modal-dialog .modal-content .modal-body .table-responsive table tbody tr:nth-child(even) {
+        background: #f6f6f6
+    }
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body ul {
+    padding: 0;
+    display: block;
+    width: 100%
+}
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body ul li {
+        list-style: none
+    }
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body ul.headerUl {
+        padding: 0 10px 25px 20px;
+        display: block
+    }
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body ul li {
+        float: left;
+        width: 15%;
+        font-size: 18px;
+        color: #6a6c6f
+    }
+
+        .myModal.myModal4 .modal-dialog .modal-content .modal-body ul li:first-child {
+            width: 20%
+        }
+
+        .myModal.myModal4 .modal-dialog .modal-content .modal-body ul li:nth-child(3) {
+            width: 20%
+        }
+
+.myModal .modal-dialog .modal-content .modal-body .leaveBox {
+    padding: 15px 0;
+    margin-bottom: 7px;
+    background: #f6f6f6;
+    overflow: hidden;
+    border-radius: 5px
+}
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body ul.reasonBox li:first-child {
+    width: 100%
+}
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body ul.ulRow {
+    display: block
+}
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body ul.ulRow li.liRow {
+        width: 100%;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #6a6c6f
+    }
+
+        .myModal.myModal4 .modal-dialog .modal-content .modal-body ul.ulRow li.liRow ul {
+            margin-top: 5px;
+            line-height: 10px;
+            display: block;
+            float: right
+        }
+
+            .myModal.myModal4 .modal-dialog .modal-content .modal-body ul.ulRow li.liRow ul li {
+                padding-right: 15px;
+                float: left;
+                width: 15%;
+                font-size: 14px;
+                color: #6a6c6f
+            }
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body p {
+    margin-top: 10px
+}
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body p button {
+        color: #fff;
+        background: #62cb31;
+        border: none;
+        outline: none;
+        float: right
+    }
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body ul.ulRow li.liRow ul li:first-child {
+    width: 20%
+}
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body ul.ulRow li.liRow ul li:nth-child(3) {
+    width: 20%
+}
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body .form-group {
+    margin-bottom: 0
+}
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body .relularizeContentSection h5 {
+    color: #62cb31
+}
+
+.myModal.myModal4 .modal-dialog .modal-content .modal-body .relularizeContentSection .heightBox {
+    height: 350px;
+    overflow: auto;
+    overflow-x: hidden
+}
+.table-responsive {
+    max-width: 100%;
+    margin: auto
+}
+
+    /*.table-responsive.attendance table {
+        position: relative;
+        display: block;
+        max-height: 303px;
+        overflow: scroll;
+        border-collapse: inherit;
+        margin-bottom: 0px;
+    }
+
+    .table-responsive.attendance thead {
+        position: relative;
+        overflow: visible;
+        z-index: 3;
+    }
+
+        .table-responsive.attendance thead th {
+            background-color: #f1f3f6;
+            height: 32px;
+            padding: 3px 15px 0;
+            font-size: 13px;
+            vertical-align: top;
+            position: relative
+        }
+
+            .table-responsive.attendance thead th p {
+                margin: 5px 0;
+                font-weight: 400
+            }
+
+            .table-responsive.attendance thead th:nth-child(1) {
+                min-width: 200px;
+                position: relative;
+                z-index: 99;
+                border-top: none !important;
+                left: 0
+            }
+
+            .table-responsive.attendance thead th:nth-child(2) {
+                position: relative;
+                z-index: 99;
+                border-top: none;
+                left: 0
+            }
+
+        .table-responsive.attendance thead tr {
+            position: relative;
+            top: 0
+        }
+
+    .table-responsive.attendance tbody td {
+        background-color: #fff;
+        padding: 8px 1px;
+        font-size: 13px
+    }
+
+    .table-responsive.attendance tbody tr td:nth-child(1), .table-responsive.attendance tbody tr td:nth-child(2) {
+        position: relative;
+        z-index: 2;
+        text-align: left;
+        background-color: #f1f3f6;
+        left: 0
+    }
+        .table-responsive.attendance tbody tr td:nth-child(1) img {
+            margin-right: 5px;
+        }*/
+
+
+        .hpanel .summaryBox {
+            display: block
+        }
+
+    .hpanel .summaryBox table {
+        margin-bottom: 0;
+        border: 1px solid #ddd
+    }
+
+        .hpanel .summaryBox table th {
+            padding: 5px 0;
+            font-weight: 400;
+            background: #f1f3f6;
+            text-align: center
+        }
+
+        .hpanel .summaryBox table td {
+            padding: 0;
+            font-size: 13px;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .hpanel .summaryBox table thead tr th:nth-child(3) {
+            color: #62cb31
+        }
+
+        .hpanel .summaryBox table thead tr th:nth-child(4) {
+            color: #e74c3c
+        }
+
+        .hpanel .summaryBox table thead tr th:nth-child(5) {
+            color: #3498db
+        }
+
+        .hpanel .summaryBox table tbody tr td:nth-child(3) {
+            color: #62cb31
+        }
+
+        .hpanel .summaryBox table tbody tr td:nth-child(4) {
+            color: #e74c3c
+        }
+
+        .hpanel .summaryBox table tbody tr td:nth-child(5) {
+            color: #3498db
+        }
+.setwidth {min-width:200px}
+.thisMonthBtn{margin-right:0px;} 
+@media screen and (max-width:1600px) {
+    .logoBox img {
+        margin: 180px 0 70px
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .logoBox img {
+        margin: 160px 0 70px
+    }
+}
+
+@media screen and (max-width:1366px) {
+    #wrapper .content .top-boxes {
+        padding: 15px
+    }
+
+    .logoBox img {
+        margin: 130px 0 70px
+    }
+}
+
+@media screen and (max-width:1280px) {
+    #wrapper .content .top-boxes {
+        min-height: 85px
+    }
+
+    .myModal .modal-dialog {
+        max-width: 95% !important;
+        font-size: 13px;
+        width: 100%
+    }
+
+    #wrapper .content .top-boxes .pe-7s-users {
+        font-size: 40px
+    }
+
+    .absenet-circle {
+        padding-top: 6px;
+        margin-right: 22px;
+        width: 50px;
+        height: 50px
+    }
+
+    .fc-event-container .fc-event {
+        margin-top: 30px
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .myModal .modal-dialog {
+        max-width: 95% !important;
+        font-size: 13px;
+        width: 100%
+    }
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body .relularizeContentSection {
+        overflow: hidden;
+        overflow-x: auto
+    }
+
+        .myModal.myModal4 .modal-dialog .modal-content .modal-body .relularizeContentSection .heightBox {
+            width: 1100px
+        }
+
+    .pendingTasksBox .chat-discussion {
+        padding-top: 15px;
+        height: 480px
+    }
+
+    .notificationBox .tabs-left > .nav-tabs > li > a {
+        margin-right: inherit
+    }
+
+    .notificationBox .w-xs {
+        margin-bottom: 5px
+    }
+
+    .notificationBox .btn-group .btn {
+        margin-top: 5px
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .message span {
+        padding: 0;
+        display: block;
+        line-height: 20px
+    }
+   
+    
+
+    .deduction .form-control {
+        padding: 6px 5px
+    }
+
+    .taxBox .calculatBox .calculatBoxInner.minHight {
+        height: inherit
+    }
+
+    .taxBox .calculatBox .calculatBoxInner:after {
+        display: none
+    }
+
+    .logoBox img {
+        margin: 95px 0 70px
+    }
+
+    .statusBox ul li{margin-bottom:5px;}
+    .hpanel .panel-body.notificationBox .text-right{text-align:left;}
+}
+
+@media screen and (max-width:768px) {
+    #menu {
+        width: 180px
+    }
+
+    .content {
+        padding: 15px 15px 40px
+    }
+
+    #wrapper .content .top-boxes .text-right {
+        text-align: center
+    }
+
+    #wrapper .content .top-boxes {
+        min-height: 88px
+    }
+
+    .taxBox .calculatBox .calculatBoxInner .grossBox.icon p {
+        height: inherit
+    }
+
+    .logoBox img {
+        margin: 50px 0 20px;
+        max-width: 250px
+    }
+
+    .myModal .modal-dialog {
+        max-width: 90% !important;
+        font-size: 13px;
+        width: 100%
+    }
+
+    .myModal.holidayModal .modal-dialog {
+        max-width: 75% !important
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .leaveApplicationCount {
+        width: 48%;
+        margin-right: 25px;
+        float: left;
+        min-height: 112px
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .leaveCountTableSection {
+        width: 48%;
+        float: left;
+        min-height: 112px;
+        margin-top: 0
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .showApproverDiv {
+        width: 100%;
+        float: left
+    }
+
+        .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverBox {
+            width: 48%;
+            margin-right: 25px;
+            float: left
+        }
+
+            .myModal .modal-dialog .modal-content .modal-body .showApproverDiv .approverBox.approverBox2 {
+                margin-right: 0
+            }
+
+    .myModal.myModal2 .modal-dialog .modal-content .modal-body .leaveApplicationCount {
+        width: 100%;
+        min-height: auto
+    }
+
+    .myModal.myModal2 .modal-dialog .modal-content .modal-body .showApproverDiv .approverBox {
+        width: 100%
+    }
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body .showApproverDiv .approverBox {
+        width: 100%
+    }
+}
+
+@media screen and (max-width:480px) {
+    .notificationBox .panel-body {
+        border: none
+    }
+
+    .mobWidth100 {
+        width: 100%
+    }
+
+        .mobWidth100 input {
+            margin-top: 5px
+        }
+    .rosterimgwidth{width:30px !important;height:30px !important;}
+    .checkoutAttendence .mobHide {
+        display: none
+    }
+
+    .hpanel .panel-body {
+        padding: 10px
+    }
+
+        .hpanel .panel-body .table-responsive {
+            margin-top: 8px
+        }
+
+    .pendingTasksBox .chat-message {
+        padding: 0
+    }
+
+    .recent-activites .vertical-timeline-icon {
+        width: 18px
+    }
+
+    .recent-activites .v-timeline::before {
+        left: 8px
+    }
+
+    .recent-activites .vertical-timeline-content {
+        margin-left: 20px
+    }
+
+    .centerIcon {
+        text-align: center
+    }
+
+    .lastUpdate {
+        width: 70%
+    }
+
+    .leave-symbol ul li {
+        width: 50%;
+        font-size: 14px
+    }
+
+    .my-attendense .leave-btns .w-lg {
+        width: 100%
+    }
+
+    .my-attendense h4 {
+        font-size: 13px
+    }
+
+    .pendingTasksBox .w-xs {
+        min-width: auto
+    }
+
+    #wrapper .content .top-boxes {
+        padding: 10px;
+        min-height: inherit
+    }
+
+        #wrapper .content .top-boxes a {
+            padding: 5px 0
+        }
+
+    #wrapper .infont {
+        padding: 0 10px
+    }
+
+    .tabs-left > .nav-tabs {
+        margin-right: 0;
+        width: 30%
+    }
+
+    .tabs-left .panel-body {
+        margin-left: 30%;
+        width: 70%
+    }
+
+    .chat-discussion .chat-message .message {
+        margin-left: 0
+    }
+
+    .notificationBox .chat-message button {
+        min-width: 70px;
+        width: 70px
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .message span {
+        padding: 0;
+        display: block;
+        line-height: 20px
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .message p {
+        font-size: 12px
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .chat-message .text-right {
+        text-align: left
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .chat-message button {
+        margin-top: 10px;
+        width:100%;
+    }
+
+    .notificationBox .text-right {
+        text-align: center
+    }
+
+    .notificationBox .w-xs {
+        min-width: 30%
+    }
+
+    .deduction .table-responsive {
+        border: none
+    }
+
+    .deduction .tableBox tbody {
+        border: 1px solid #ddd
+    }
+
+        .deduction .tableBox tbody tr td, .deduction .tableBox tbody tr th {
+            padding: 5px;
+            white-space: inherit
+        }
+
+            .deduction .tableBox tbody tr th span {
+                display: block;
+                height: 0
+            }
+
+    .deduction .tableBox thead tr td {
+        padding: 5px;
+        white-space: inherit
+    }
+
+        .deduction .tableBox thead tr td:first-child {
+            width: 220px
+        }
+
+    .deduction .form-control {
+        width: 90px
+    }
+
+    .deduction .radio {
+        width: 90px
+    }
+
+    .mediclaimBox {
+        width: 186px
+    }
+
+    .taxBox .btn-group {
+        padding: 0 0 15px;
+        margin: 0 auto;
+        position: inherit;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        width: 260px
+    }
+
+    .taxBox .table-responsive {
+        border: none
+    }
+
+    .taxBox .calculatBox .calculatBoxInner {
+        height: inherit
+    }
+
+        .taxBox .calculatBox .calculatBoxInner .grossBox.icon:after {
+            display: none
+        }
+
+    .taxBox .nav-tabs > li > a {
+        padding: 10px
+    }
+
+    .loginBg {
+        overflow: auto
+    }
+
+    .logoBox {
+        margin-bottom: 0 !important;
+        text-align: center;
+        height: 280px !important;
+        display: flex;
+        align-items: center
+    }
+
+        .logoBox img {
+            margin: 25px 0;
+            width: 100%;
+            max-width: 200px; left:100px;
+        }
+
+        .logoBox h3 {
+            margin: 0 auto;
+            width: 80%
+        }
+
+        .logoBox ul {
+            margin: 0 auto 20px;
+            width: 80%
+        }
+
+            .logoBox ul li {
+                margin-top: 18px
+            }
+
+    .loginBox {
+        margin-bottom: 30px;
+        height: inherit
+    }
+
+        .loginBox .loginInnerBox {
+            margin: 15px auto 0
+        }
+
+    .myModal .modal-dialog {
+        max-width: 95% !important
+    }
+
+    .myModal.holidayModal .modal-dialog {
+        max-width: 100% !important
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .leaveApplicationCount {
+        width: 100%;
+        min-height: auto
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .leaveCountTableSection {
+        width: 100%;
+        margin-top: 3px
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .showApproverDiv {
+        display: none
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .padd-right0 {
+        padding-right: 15px
+    }
+
+    .myModal .modal-dialog .modal-content .modal-body .leaveApplicationRightSection .clearfix {
+        overflow: scroll
+    }
+
+    .myModal.myModal2 .modal-dialog .modal-content .modal-header h4 {
+        font-size: 15px
+    }
+
+    .myModal.myModal4 .modal-dialog .modal-content .modal-body .showApproverDiv {
+        display: block
+    }
+
+    .statusBox .btn-sm {
+        padding: 5px
+    }
+
+    .notificationBox .tabs-left > .nav-tabs > li > a {
+        padding: 10px 5px
+    }
+
+    .containerChart {
+        width: auto !important
+    }
+
+    .hpanel .panel-body .flexClass {
+        min-height: 70px
+    }
+
+
+.hpanel .statusBox .businessUnit {
+    padding-bottom: 15px
+}
+
+.hpanel .statusBox ul li {
+    margin-bottom: 0
+}
+
+    .hpanel .statusBox ul li:nth-child(4) {
+        margin-bottom: 0px
+    }
+
+    .table-responsive.attendance thead th {
+        font-size: 10px;
+    }
+
+        .table-responsive.attendance thead th:nth-child(1) {
+            min-width: 100px !important
+        }
+
+    .table-responsive.attendance tbody td {
+        font-size: 9px;
+    }
+    .hpanel > .panel-footer, .hpanel > .panel-section{padding:10px;}
+    .notificationImgWidth {
+        width: 30px;
+        height: 30px;
+        position: static;
+    }
+    .verticalTabsBox .chat-discussion .chat-message{position:static}
+}
+
+@media screen and (max-width:375px) {
+    .leave-symbol ul li {
+        width: 50%;
+        font-size: 11px
+    }
+
+    .logoBox h3 {
+        margin: 0 auto;
+        width: 100%
+    }
+
+    .logoBox ul {
+        margin: 0 auto 20px;
+        width: 100%
+    }
+
+        .logoBox ul li {
+            margin-top: 15px
+        }
+}
+
+@media screen and (max-width:360px) {
+    .notificationBox .w-xs {
+        min-width: 30%
+    }
+
+    .notificationBox .tabs-left > .nav-tabs > li a {
+        padding: 10px 5px;
+        font-size: 12px
+    }
+
+    .leave-symbol ul li {
+        width: 50%;
+        font-size: 12px
+    }
+}
+
+@media screen and (max-width:320px) {
+    .notificationBox .w-xs {
+        min-width: 30%;
+        padding: 5px 7px;
+        margin-right: 5px
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .message span {
+        font-size: 12px
+    }
+
+    .notificationBox .verticalTabsBox .chat-discussion .message p {
+        font-size: 11px
+    }
+
+    .lastUpdate {
+        width: 65%
+    }
+
+    .leave-symbol ul li {
+        width: 50%;
+        font-size: 10px
+    }
+
+    .my-attendense .fc-widget-header .fc-day-header {
+        font-size: 10px
+    }
+
+    .logoBox {
+        height: 270px !important
+    }
+
+    .loginBox .loginInnerBox {
+        margin: 0 auto
+    }
+
+        .loginBox .loginInnerBox input {
+            height: 35px
+        }
+
+        .loginBox .loginInnerBox .loginBtn {
+            height: 35px
+        }
+
+        .loginBox .loginInnerBox .btn-outline {
+            line-height: 20px
+        }
+
+    .myModal.myModal2 .modal-dialog .modal-content .modal-header h4 {
+        font-size: 13px
+    }
+
+        .myModal.myModal2 .modal-dialog .modal-content .modal-header h4 i {
+            top: 12px
+        }
+
+    .statusBox .btn-sm {
+        margin-right: 5px;
+        font-size: 10px
+    }
+
+    .tabs-left .panel-body {
+        margin-left: 31%;
+        width: 69%
+    }
+
+    .notificationBox .tabs-left > .nav-tabs > li a {
+        font-size: 11px
+    }
+
+    .content {
+        min-width: 270px
+    }
+    .notificationBox .tabs-left > .nav-tabs > li a{font-size:10px;}
+    .content{min-width:270px;}
+
+    .hpanel .summaryBox {
+        padding: 10px 0 0;
+        border: none;
+        background: none
+    }
+
+        .hpanel .summaryBox table th {
+            padding: 6px 4px;
+            font-size: 10px;
+        }
+        .hpanel .summaryBox table td{font-size:10px;}
+}
+
+.rbc-event-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 4px;
+    text-align: center;
+    float: left;
+    border: 0;
+    border-radius: 10px !important;
+    margin-top: 15px;
+    left: 43%;
+    align-self: center
+}
+
+.rbc-event-present {
+    background-color: #64cc34 !important
+}
+
+.rbc-event-absent {
+    background: none !important;
+    position:relative;
+}
+    .rbc-event-absent:before, .rbc-event-absent:after {
+        position: absolute;
+        left: 4px;
+        content: ' ';
+        height: 9px;
+        width: 2px;
+        top:0;
+        background-color: #e74c3c;
+    }
+
+    .rbc-event-absent:before {
+        transform: rotate(45deg);
+    }
+
+    .rbc-event-absent:after {
+        transform: rotate(-45deg);
+    }
+.rbc-event-absent-halfday {
+    border: 1px solid #e74c3c;
+    background: linear-gradient(to left, #e74c3c 50%, #fff 50%) !important;
+}
+.rbc-event-absent-fullday {
+    background: #e74c3c !important
+}
+
+.rbc-event-leave-halfday {
+    border: 1px solid #9b59b6;
+    background: linear-gradient(to left, #9b59b6 50%, #fff 50%) !important;
+}
+
+.rbc-event-leave-fullday {
+    background: #9b59b6 !important
+}
+
+.rbc-event-leave-applied, .rbc-event-outdoor-applied, .rbc-event-wfh-applied  {
+    background: #d7d7d7 !important
+}
+
+.rbc-event-late-coming-applied {
+    background: #8a9885 !important
+}
+
+.rbc-event-late-coming-approved {
+    background: #5e8452 !important
+}
+
+.rbc-event-early-going-applied {
+    background: #e0b793 !important
+}
+
+.rbc-event-early-going-approved {
+    background: #e67e22 !important
+}
+
+.rbc-event-leave-approved {
+    background: #9b59b6 !important
+}
+
+.rbc-event-outdoor-approved {
+    background: #ffb606 !important
+}
+
+.rbc-event-wfh-approved {
+    background: #0998D9 !important
+}
+
+.rbc-event-regularize-applied {
+    background: #ffb0fb !important;
+}
+
+.rbc-event-regularize-approved {
+    background: #3498db !important;
+}
+
+.rbc-event-week-off, .rbc-event-holiday {
+    display: none
+}
+
+.rbc-slot-week-off {
+    background: #fcffa6 !important
+}
+
+.rbc-slot-holiday {
+    background: #bfdbf5 !important
+}
+
+.rbc-slot-disable {
+    background: #e5e5e5 !important
+}
+
+.rbc-slot-selected {
+    background: #ffa399 !important
+}
+
+.containerChart {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 479px;
+    height: 160px;
+    background-color: #fff
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.react-loader-container {
+    position: fixed;
+    overflow:auto;
+   
+    width: 100%;
+    background: #000;
+    z-index: 9999;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+}
+
+.react-loader-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    opacity: 1;
+}
+
+.react-loader-img {
+    width: 64px;
+    height: 64px;
+    opacity: 1;
+}
+
+@media screen and (max-width:375px) {
+	.logoBox img { left:82px;}
+}
+@media screen and (max-width:360px) {
+	.logoBox img {
+		left: 75px;
+	}
+}
+@media screen and (max-width:320px) {
+	.logoBox img {
+		left: 56px;
+	}
+}

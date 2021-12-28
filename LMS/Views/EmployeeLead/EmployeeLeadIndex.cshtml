@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Customer List";
+}
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a> </li>
+                        <li class="">Master</li>
+                        <li class="active">Employee Lead Detail</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vd_content-section clearfix">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-green">
+                                <h3 class="panel-title">
+                                    <span class="menu-icon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span> <span class="menu-text">Create @ViewBag.HeaderTitle</span>
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="divLMS">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    .loading {
+        position: relative;
+    }
+
+        .loading:before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 9;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 2555, 255,0.6) url(../images/loading.gif) no-repeat center 35vh;
+            background-size: 85px;
+        }
+</style>
+<script src="~/js/jquery.js"></script>
+<script src="~/CustomJavaScript/CustomJs.js"></script>
+<script>
+    function GetEmployeeLead() {
+        $.get("/EmployeeLead/CreateLead", function (data) {
+            $("#divLMS").html(data);
+        })
+    }
+    $(document).ready(function () {
+        GetEmployeeLead();
+    });
+</script>

@@ -1,0 +1,73 @@
+﻿@model HRMS.Core.Entities.UserManagement.SubModuleMaster
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+              data-ajax-complete="AjaxComplete"
+              asp-action="UpSertSubModule" asp-controller="SubModule" data-ajax-success="Success">
+            <div class="box-body">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="CreatedBy" type="hidden" />
+                        <input asp-for="CreatedDate" type="hidden" />
+                        <label asp-for="ModuleId">Select Module</label>
+                        <select type="text" class="form-control" asp-for="ModuleId" asp-items="@(new SelectList(ViewBag.Module ,"Id","ModuleName"))">
+                            <option value="">--Select--</option>
+                        </select>
+                        <span asp-validation-for="ModuleId" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="SubModuleName">SubModule Name</label>
+                        <input asp-for="SubModuleName" class="form-control" />
+                        <span asp-validation-for="SubModuleName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="ControllerName">Controller</label>
+                        <input asp-for="ControllerName" class="form-control" />
+                        <span asp-validation-for="ControllerName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="ActionName">Action</label>
+                        <input asp-for="ActionName" class="form-control" />
+                        <span asp-validation-for="ActionName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="SubModuleIcon">Icon (fa class)</label>
+                        <input asp-for="SubModuleIcon" class="form-control" />
+                        <span asp-validation-for="SubModuleIcon" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary pull-right" value="Save" />
+                    <button class="buttonload" style="display:none">
+                        <i class="fa fa-refresh fa-spin"></i>Loading
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="reset" class="btn btn-danger pull-left">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

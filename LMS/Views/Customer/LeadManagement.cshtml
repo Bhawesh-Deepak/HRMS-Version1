@@ -1,0 +1,251 @@
+﻿@{
+    ViewData["Title"] = "Leads";
+}
+
+<style>
+    .panel .panel-heading{background:#436eac !important;}
+    .vd_bg-green{background:#436eac !important; box-shadow:0 4px 0 #fff !important}
+    #btnUpdate{margin-right:-15px}
+</style>
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <!--<div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a> </li>
+                        <li class="active">Leas Allocation</li>
+                    </ul>
+                </div>
+            </div>-->
+            <div class="vd_content-section clearfix">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-green">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Calling Data Import</span> </h3>
+                                <div class="vd_panel-menu" id="change-3">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="fa fa-minus"></i> </div>
+
+                                    <!--<div data-action="close" data-original-title="Close" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-cross"></i> </div>-->
+                                </div>
+                                <!-- vd_panel-menu -->
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <!-- begin col-6 -->
+                                    <div class="col-md-6">
+                                        <!-- begin panel -->
+                                        <!-- end panel -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading ui-sortable-handle">
+                                                <div class="panel-heading-btn">
+
+                                                </div>
+                                                <h4 class="panel-title"><span class="fa fa-cloud-upload" style="padding-right: 4px;font-size: 20px;"></span>Auto Upload</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <form asp-action="UploadLeadData" asp-controller="CustomerDetail" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Date :</label><em class="text-danger">*</em>
+                                                            <input type="date" id="AssignDate" required="" name="AssignDate" class="input-sm">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Browse   File :</label><em class="text-danger">*</em>
+                                                            <input type="file" id="CustomerData" required="" name="CustomerData" class="input-sm" onchange="checkemployeefile(this);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-right">
+                                                        <div class="col-md-12 ">
+                                                            <a href="~/Documents/Leadallocationauto.xlsx" download="" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold pull-left"><i class="fa fa-file-excel-o"></i> Download Templete </a>
+                                                            <button type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold"> <i class="fa fa-upload"></i>  Upload </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 ui-sortable">
+                                        <!-- begin panel -->
+                                        <!-- end panel -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading ui-sortable-handle">
+
+                                                <h4 class="panel-title"><span class="fa fa-cloud-upload" style="padding-right: 4px;font-size: 20px;"></span>Manual Upload</h4>
+
+                                            </div>
+                                            <div class="panel-body">
+                                                <form asp-action="UploadLeadData" asp-controller="CustomerDetail" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Date :</label><em class="text-danger">*</em>
+                                                            <input type="date" id="AssignDate" required="" name="AssignDate" class="input-sm">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Browse   File :</label><em class="text-danger">*</em>
+                                                            <input type="file" id="CustomerData" required="" name="CustomerData" class="input-sm" onchange="checkemployeefile(this);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-right">
+                                                        <div class="col-md-12">
+                                                            <a href="~/Documents/Leadallocationmanual.xlsx" download="" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold pull-left"><i class="fa fa-file-excel-o"></i> Download Templete </a>
+                                                            <button type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold"> <i class="fa fa-upload"></i>  Upload </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-black">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Calling Leads Import</span> </h3>
+                                <div class="vd_panel-menu" id="change-4">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"><i class="fa fa-minus"></i> </div>
+
+                                    <!--<div data-action="close" data-original-title="Close" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-cross"></i> </div>-->
+                                </div>
+                                <!-- vd_panel-menu -->
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <!-- begin col-6 -->
+                                    <div class="col-md-6">
+                                        <!-- begin panel -->
+                                        <!-- end panel -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading ui-sortable-handle">
+                                                <div class="panel-heading-btn">
+
+                                                </div>
+                                                <h4 class="panel-title"> <span class="fa fa-cloud-upload" style="padding-right: 4px;font-size: 20px;"></span>Auto Upload</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <form asp-action="UploadLeadData" asp-controller="CustomerDetail" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Date :</label><em class="text-danger">*</em>
+                                                            <input type="date" id="AssignDate" required="" name="AssignDate" class="input-sm">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Browse   File :</label><em class="text-danger">*</em>
+                                                            <input type="file" id="CustomerData" required="" name="CustomerData" class="input-sm" onchange="checkemployeefile(this);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-right">
+                                                        <div class="col-md-12 ">
+                                                            <a href="~/Documents/Leadallocationauto.xlsx" download="" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold pull-left"><i class="fa fa-file-excel-o"></i> Download Templete </a>
+                                                            <button type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold"> <i class="fa fa-upload"></i>  Upload </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 ui-sortable">
+                                        <!-- begin panel -->
+                                        <!-- end panel -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading ui-sortable-handle">
+
+                                                <h4 class="panel-title">
+                                                    <span class="fa fa-cloud-upload" style="padding-right: 4px;font-size: 20px;"></span>Manual Upload</h4>
+
+                                            </div>
+                                            <div class="panel-body">
+                                                <form asp-action="UploadLeadData" asp-controller="CustomerDetail" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Date :</label><em class="text-danger">*</em>
+                                                            <input type="date" id="AssignDate" required="" name="AssignDate" class="input-sm">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Browse   File :</label><em class="text-danger">*</em>
+                                                            <input type="file" id="CustomerData" required="" name="CustomerData" class="input-sm" onchange="checkemployeefile(this);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-right">
+                                                        <div class="col-md-12 ">
+                                                            <a href="~/Documents/Leadallocationmanual.xlsx" download="" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold pull-left"><i class="fa fa-file-excel-o"></i> Download Templete </a>
+                                                            <button type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold"> <i class="fa fa-upload"></i>  Upload </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-yellow">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Create Self Leads</span> </h3>
+                                <div class="vd_panel-menu" id="change-5">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="fa fa-minus"></i></div>
+
+                                   <!-- <div data-action="close" data-original-title="Close" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-cross"></i> </div>-->
+                                </div>
+                                <!-- vd_panel-menu -->
+                            </div>
+                            <div class="panel-body" id="divLeads">
+
+
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- .vd_content-section -->
+
+        </div>
+        <!-- .vd_content -->
+    </div>
+    <!-- .vd_container -->
+</div>
+<script src="~/CustomJavaScript/CustomJs.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $.get("/EmployeeLead/CreateLead", {}, function (response) {
+            $("#divLeads").html(response);
+
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+      $('#change-3, #change-4, #change-5').on('click', function() {
+        $(this).find('.fa').toggleClass('fa fa-minus fa fa-plus');
+        return false;
+      });
+    });
+</script>

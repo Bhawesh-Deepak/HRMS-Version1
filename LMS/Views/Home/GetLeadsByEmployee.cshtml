@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HRMS.Core.ReqRespVm.Response.Leads.LeadsBySupervisorVM>
+
+
+@{
+    Layout = null;
+}
+
+<div class="modal-body">
+    <div class="panel-body table-responsive">
+        <table class="table table-condensed table-striped" id="data-tables-1">
+            <thead>
+                <tr>
+                    <th style="width:100px">Employee Name</th>
+                    <th>AsignDate</th>
+                    <th>Lead</th>
+                    <th>Calling</th>
+                    <th>Pending</th>
+                    <th>Hot</th>
+                    <th>Warm</th>
+                    <th>Cold</th>
+                    <th>Not Interested</th>
+                    <th style="width:100px">Lead Convert To Client</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.employeeName</td>
+                        <td>@string.Format("{0:dd/MM/yyyy}", item.AssignDate)</td>
+                        <td><a>@item.Leads</a></td>
+                        <td><a>@item.Called</a></td>
+                        <td><a>@item.Pending</a></td>
+                        <td><a>@item.Hot</a></td>
+                        <td><a>@item.Warm</a></td>
+                        <td><a>@item.Cold</a></td>
+                        <td><a>@item.NotInterested</a></td>
+                        <td><a>@item.LeadConvertedToClient</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer background-login">
+    <button type="button" class="btn vd_btn vd_btn-bevel vd_bg-red font-semibold" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+    <a asp-action="ExportTeamLaedByEmployee" asp-controller="Home" asp-route-employeeId="@Model.FirstOrDefault().employeeId"  class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold" title="Export to Excel" ><i class="fa fa-download"></i> Download</a>
+</div>
+
+<script>
+		$(document).ready(function(){
+			$('#data-tables-1').DataTable()
+		});
+	</script>

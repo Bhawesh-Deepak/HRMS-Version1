@@ -1,0 +1,81 @@
+﻿@model HRMS.Core.Entities.Master.SalaryHeads
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+              data-ajax-complete="AjaxComplete"
+              asp-action="UpsertSalaryHeads" asp-controller="SalaryHeads" data-ajax-success="Success">
+            <div class="box-body">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="CreatedBy" type="hidden" />
+                        <input asp-for="CreatedDate" type="hidden" />
+                        <label asp-for="HeadName">Head Name</label>
+                        <input type="text" class="form-control" asp-for="HeadName" />
+                        <span asp-validation-for="HeadName" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="HeadCode">Head Code</label>
+                        <input asp-for="HeadCode" class="form-control" />
+                        <span asp-validation-for="HeadCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="IsDependOnDay">IsDepend on Day</label>
+                        <select asp-for="IsDependOnDay" class="form-control">
+                            <option value="">--Select--</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                        <span asp-validation-for="IsDependOnDay" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="HeadType">Head Type</label>
+                        <select asp-for="HeadType" class="form-control">
+                            <option value="">--Select--</option>
+                            <option value="A">Addition</option>
+                            <option value="D">Deduction</option>
+                        </select>
+                        <span asp-validation-for="HeadType" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="IsDisplayOnPaySlip">Display on payslip</label>
+                        <select asp-for="IsDisplayOnPaySlip" class="form-control">
+                            <option value="">--Select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <span asp-validation-for="IsDisplayOnPaySlip" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary pull-right" value="Save" />
+                    <button class="buttonload" style="display:none">
+                        <i class="fa fa-refresh fa-spin"></i>Loading
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="reset" class="btn btn-danger pull-left">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

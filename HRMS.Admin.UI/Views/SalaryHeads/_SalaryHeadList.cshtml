@@ -1,0 +1,77 @@
+﻿@model IEnumerable<HRMS.Core.Entities.Master.SalaryHeads>
+
+<table id="tblDataList" class="table table-striped table-bordered responsive" style="width:100%">
+    <thead>
+        <tr>
+            <th>Head Name</th>
+            <th>Head Code</th>
+            <th>Head Type</th>
+            <th>Is Depend on Day</th>
+            <th>Display on Payslip</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>
+                    @data.HeadName
+                </td>
+                <td>
+
+                    @data.HeadCode
+                </td>
+                <td>
+                    @if (data.HeadType.Trim().ToUpper() == "A")
+                    {
+                        <span style="color:green">Addition</span>
+                    }
+                    else
+                    {
+                        <span style="color:orangered">Deduction</span>
+                    }
+                </td>
+
+                <td>
+                    @if (data.IsDependOnDay)
+                    {
+
+
+                        <span><i class="fa fa-check"></i></span>
+                    }
+                    else
+                    {
+                        <span><i class="fa fa-cancel"></i></span>
+                    }
+                </td>
+                <td>
+                    @if (data.IsDisplayOnPaySlip)
+                    {
+
+
+                        <span><i class="fa fa-check"></i></span>
+                    }
+                    else
+                    {
+                        <span><i class="fa fa-cancel"></i></span>
+                    }
+                </td>
+
+                <td>
+                    <a class="btn btn-outline-success pull-right" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'  style='color:#DD4B39'></i>" onclick="UpdateRecord(@data.Id, this)">
+                        <i class="fa fa-edit" style="color:#3C8DBC"></i>
+
+                    </a>
+
+                    <a class="btn btn-outline-danger pull-right" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'  style='color:#DD4B39'></i>" onclick="Delete(@data.Id, this)">
+                        <i class="fa fa-trash" style="color:#DD4B39"></i>
+
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

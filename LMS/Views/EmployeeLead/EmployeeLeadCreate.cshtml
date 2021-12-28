@@ -1,0 +1,71 @@
+﻿@model HRMS.Core.Entities.LeadManagement.CustomerDetail
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/CustomJavaScript/CustomJs.js"></script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel widget">
+            <div class="panel-body">
+                <form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+                      data-ajax-complete="AjaxComplete"
+                      asp-action="PostCreateLead" asp-controller="EmployeeLead" data-ajax-success="Success">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="control-label">Lead Name</label>
+                                <div class="controls">
+                                    <input asp-for="Id" type="hidden" />
+                                    <input asp-for="CreatedBy" type="hidden" />
+                                    <input asp-for="CreatedDate" type="hidden" />
+                                    <input type="hidden" asp-for="AssignDate" />
+                                    <input type="text" asp-for="LeadName" class="input-sm">
+                                    <span asp-validation-for="LeadName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="control-label">Location</label>
+                                <div class="controls">
+                                    <input type="text" asp-for="Location" class="input-sm">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="control-label">Phone</label>
+                                <div class="controls">
+                                    <input type="number" asp-for="Phone" class="input-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="control-label">Email</label>
+                                <div class="controls">
+                                    <input type="email" asp-for="Email" class="input-sm">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="control-label">Description/Project</label>
+                                <div class="controls">
+                                    <input type="text" asp-for="Description_Project" class="input-sm">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Special Remarks</label>
+                                <div class="controls">
+                                    <input type="text" asp-for="SpecialRemarks" class="input-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="col-sm-12">
+                                <button id=btnUpdate type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold pull-right"><i class="fa fa-plus"></i> Submit</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

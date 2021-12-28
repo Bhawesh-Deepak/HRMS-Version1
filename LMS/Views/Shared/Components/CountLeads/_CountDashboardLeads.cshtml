@@ -1,0 +1,176 @@
+﻿@model HRMS.Core.ReqRespVm.Response.Leads.CountDashboardLeadsVM
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="vd_status-widget vd_bg-green widget" style="background:#787878 !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" onclick="BindValue(null,'TotalLeads')"></i> </div>
+                </div>
+                <!-- vd_panel-menu -->
+
+                <a class="panel-body" asp-action="ExportCustomerLead" asp-controller="Home" asp-route-LeadTypeId="null">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="fa fa-users"></i>
+                        </span>
+                        <span class="menu-value TotalLeads">
+                            @Model.TotalLeads
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Total Leads
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="vd_status-widget vd_bg-grey  widget" style="background:#66758a !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" onclick="BindValue(1,'HotLeads')"></i> </div>
+                </div>
+                <!-- vd_panel-menu -->
+
+                <a class="panel-body" asp-action="ExportCustomerLead" asp-controller="Home" asp-route-LeadTypeId="1">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="fa fa-sun-o"></i>
+                        </span>
+                        <span class="menu-value HotLeads">
+                            @Model.HotLeads
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Hot Leads
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="vd_status-widget vd_bg-blue widget" style="background:#54729c !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" onclick="BindValue(2,'WarmLeads')"></i> </div>
+                </div>
+                <!-- vd_panel-menu -->
+
+                <a class="panel-body" asp-action="ExportCustomerLead" asp-controller="Home" asp-route-LeadTypeId="2">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="fa fa-star-half-o"></i>
+                        </span>
+                        <span class="menu-value WarmLeads">
+                            @Model.WarmLeads
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Warm Leads
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="vd_status-widget vd_bg-yellow widget" style="background:#436eac !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" onclick="BindValue(3,'ColdLeads')"></i> </div>
+                </div>
+                <!-- vd_panel-menu -->
+
+                <a class="panel-body" asp-action="ExportCustomerLead" asp-controller="Home" asp-route-LeadTypeId="3">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="fa fa-moon-o"></i>
+                        </span>
+                        <span class="menu-value ColdLeads">
+                            @Model.ColdLeads
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Cold Leads
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="vd_status-widget vd_bg-dark-red widget" style="background:#366dba !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" onclick="BindValue(0,'IncompleteLeads')"></i> </div>
+                </div>
+                <a class="panel-body" asp-action="ExportCustomerLead" asp-controller="Home" asp-route-LeadTypeId="0">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="fa fa-question"></i>
+                        </span>
+                        <span class="menu-value IncompleteLeads">
+                            @Model.IncompleteLeads
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Pending Leads
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="vd_status-widget vd_bg-red widget" style="background:#246acc !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" onclick="BindValue(4,'NotInterested')"></i> </div>
+                </div>
+                <!-- vd_panel-menu -->
+
+                <a class="panel-body" asp-action="ExportCustomerLead" asp-controller="Home" asp-route-LeadTypeId="4">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="fa fa-times"></i>
+                        </span>
+                        <span class="menu-value NotInterested">
+                            @Model.NotInterested
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Not-Interested
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-2" style="margin-top:20px">
+            <div class="vd_status-widget vd_bg-black  widget" style="background:#1267de !important">
+                <div class="vd_panel-menu">
+                    <div data-action="refresh" data-original-title="Refresh" data-rel="tooltip" class=" menu entypo-icon smaller-font"> <i class="icon-cycle" ></i> </div>
+                </div>
+                <!-- vd_panel-menu -->
+
+                <a class="panel-body" href="#">
+                    <div class="clearfix">
+                        <span class="menu-icon">
+                            <i class="icon-users"></i>
+                        </span>
+                        <span class="menu-value">
+                            0
+                        </span>
+                    </div>
+                    <div class="menu-text clearfix">
+                        Self Generated
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- .row -->
+
+</div>
+
+
+<script>
+    function BindValue(event,classname){
+        debugger;
+          $.get("/Home/GetCountLead", { LeadTypeId: event }, function (response) {
+            $(".menu-value "+classname).text(response);
+        });
+    }
+</script>

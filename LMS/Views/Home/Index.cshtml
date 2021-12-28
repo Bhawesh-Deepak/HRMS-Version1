@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .fc-event-time{display:none;}
+    .dataTables_filter .form-control{margin-left:5px}
+    .panel .panel-heading{background:#436eac !important}
+    .fc .fc-header-title h2{color:#436eac; margin:0 0 20px 0}
+    .table tbody tr td a{color:#436eac !important}
+    .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{ 
+        background-color:#436eac; border-color:#436eac;}
+    .pagination>li>a, .pagination>li>span{color:#436eac;}
+    .modal-dialog{float:right}
+</style>
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+           <!--<div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a asp-action="Index" asp-controller="Home">Home</a> </li>
+                        <li class="active">Default Dashboard</li>
+                    </ul>
+
+
+                </div>
+            </div>--> 
+            <!-- vd_head-section -->
+
+            <div class="vd_title-section clearfix">
+                <div class="vd_panel-header">
+                    <h1>Dashboard</h1>
+                    <!--<small class="subtitle">Default dashboard for multipurpose demonstration</small>-->
+
+                    <!-- vd_panel-menu -->
+                </div>
+                <!-- vd_panel-header -->
+            </div>
+            <!-- vd_title-section -->
+
+            <div class="vd_content-section clearfix">
+                <div class="row">
+                    
+                    @await Component.InvokeAsync("CountLeads")
+
+                    <div class="col-md-12 mgbt-xs-20 mgbt-md-0">
+                        <div class="panel widget light-widget">
+                            <div class="panel-body">
+                                <div id="calendar" class="mgtp-10"> </div>
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-facebook">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Team Summery</span> </h3>
+                                <div class="vd_panel-menu" id="change-1">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="fa fa-minus"></i> </div>
+
+                                    <div   data-original-title="Export To Excel" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <a asp-action="ExportTeamLaed" asp-controller="Home" style="color:white"><i class="icon-download"></i></a>  </div>
+                                </div>
+                                 
+                            </div>
+                            <div class="panel-body-list">
+                                @await Component.InvokeAsync("TeamLead")
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+                    
+                    <!--col-md-5-->
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-yellow">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Next Intraction Activity</span> </h3>
+                                <div class="vd_panel-menu" id="change-2">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="fa fa-minus"></i> </div>
+
+                                    <!--<div data-action="close" data-original-title="Close" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-cross"></i> </div>-->
+                                </div>
+                                <!-- vd_panel-menu -->
+                            </div>
+                            <div class="panel-body-list">
+                                @await Component.InvokeAsync("NextIntractionLeads")
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+                </div>
+            </div>
+            <!-- .vd_content-section -->
+
+        </div>
+        <!-- .vd_content -->
+    </div>
+    <!-- .vd_container -->
+</div>
+<script src="~/js/jquery.js"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        var events = [];
+        $.get("/Home/GetLeadsByDate", {}, function (response) {
+            debugger;
+            for (i = 0; i < response.length; i++) {
+                events.push({
+                    title: response[i].noOfLeads,
+                    start: response[i].assignDate,
+                    url: 'CustomerDetail/CustomerList?AssignDate=' + response[i].assignDate,
+                    description: response[i].description,
+                });
+            }
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'title',
+                    center: '',
+                    right: 'today prev,next'
+                },
+                editable: true,
+                defaultDate: new Date(),
+                eventMouseover: function (data, event, view) {
+                    tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#feb811;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + 'Lead Details: ' + data.description + '</br></div>';
+                    $("body").append(tooltip);
+                    $(this).mouseover(function (e) {
+                        $(this).css('z-index', 10000);
+                        $('.tooltiptopicevent').fadeIn('500');
+                        $('.tooltiptopicevent').fadeTo('10', 1.9);
+                    }).mousemove(function (e) {
+                        $('.tooltiptopicevent').css('top', e.pageY + 10);
+                        $('.tooltiptopicevent').css('left', e.pageX + 20);
+                    });
+                },
+
+                eventMouseout: function (data, event, view) {
+                    $(this).css('z-index', 8);
+
+                    $('.tooltiptopicevent').remove();
+
+                },
+                eventLimit: true,
+                dayClick: function (date, jsEvent, view) {
+
+                    //$(this).css('background-color', '');
+                    //alert('Clicked on: ' + date.format());
+
+                    //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+                    //alert('Current view: ' + view.name);
+
+                    // change the day's background color just for fun
+                   // $(this).css('background-color', 'red');
+
+                },
+                events: events,
+            });
+            
+        })
+
+
+
+      
+
+       @* setTimeout(function () { notification("topright", "notify", "fa fa-exclamation-triangle vd_yellow", "Welcome to Lead Managment System", "Click on <i class='fa fa-question-circle vd_red'></i> Question Mark beside filter to take a view layout tour guide"); }, 1500);*@
+
+
+
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+      $('#change-1, #change-2').on('click', function() {
+        $(this).find('.fa').toggleClass('fa fa-minus fa fa-plus');
+        return false;
+      });
+    });
+</script>
+
+

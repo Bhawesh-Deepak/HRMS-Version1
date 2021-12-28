@@ -1,0 +1,289 @@
+﻿@model HRMS.Core.Entities.LeadManagement.CustomerDetail
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a> </li>
+                        <li><a href="#">Master</a> </li>
+                        <li class="active">Customer List</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vd_title-section clearfix">
+                <div class="vd_panel-header">
+                    <h1>Customer Details</h1>
+                </div>
+            </div>
+            <div class="vd_content-section clearfix">
+                <div class="row" id="divIntraction">
+                  
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel widget">
+                            <div class="panel-heading vd_bg-green">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-table"></i> </span> Customer Details</h3>
+                            </div>
+                            <div class="panel-body table-responsive">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel widget">
+                                            <div class="panel-body">
+                                                <form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+                                                      data-ajax-complete="AjaxComplete"
+                                                      asp-action="UpdateBasicInfo" asp-controller="CustomerDetail" data-ajax-success="Success">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Lead Name</label>
+                                                            <div class="controls">
+                                                                <input asp-for="Id" type="hidden" />
+                                                                <input asp-for="CreatedBy" type="hidden" />
+                                                                <input asp-for="CreatedDate" type="hidden" />
+                                                                <input type="hidden" asp-for="AssignDate" />
+                                                                <input type="text" asp-for="LeadName">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Location</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="Location">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Phone</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="Phone">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Email</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="Email">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Country</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="Country">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">State</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="State">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">City</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="City">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Zip Code</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="ZipCode">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Company Name</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="CompanyName">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Website</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="Website">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <label class="control-label">Industry</label>
+                                                            <div class="controls">
+                                                                <input type="text" asp-for="Industry">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="form-actions-condensed row mgbt-xs-0">
+                                                        <div class="col-sm-12">
+                                                            <button type="submit" class="btn vd_btn vd_bg-green vd_white pull-right">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa fa-fw fa-check-circle"></i>
+                                                                </span> Update
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel widget">
+                            <div class="panel-heading vd_bg-green">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-table"></i> </span> Secondry Contact Details</h3>
+                            </div>
+                            <div class="panel-body table-responsive">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="hidden" id="secodryId" />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="panel widget">
+                                            <div class="panel-body">
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label class="control-label">Secondry Phone</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="phone" placeholder="Customer Secondry Phone">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <div class="panel widget">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <label class="control-label">Secondry Email</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="emailId" placeholder="Customer Secondry Email">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-2 top-50">
+                                                        <button onclick="AddSecondryDetail()" style="margin-top:30px" type="submit" class="btn vd_btn vd_bg-green vd_white pull-left top-50">
+                                                            <span class="menu-icon">
+                                                                <i class="fa fa-fw fa-plus-square"></i>
+                                                            </span> Add
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="col-md-2 top-50">
+                                                        <button onclick="RemoveData()" style="margin-top:30px" type="submit" class="btn vd_btn vd_bg-green vd_white pull-left">
+                                                            <span class="menu-icon">
+                                                                <i class="fa fa-fw fa-recycle"></i>
+                                                            </span> Clear
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div id="partialDetail">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/jquery.js"></script>
+<script src="~/CustomJavaScript/CustomJs.js"></script>
+<script type="text/javascript">
+
+    function RemoveData() {
+        $("#secodryId").val(0);
+         $("#emailId").val('');
+        $("#phone").val('');
+      
+    }
+
+    function GetLeadIntraction() {
+        //divIntraction
+        $.get("/CustomerDetail/GetCustomerLeadDetail", { custId: $("#Id").val() }, function (data) {
+            $("#divIntraction").html(data);
+        })
+    }
+    function AddSecondryDetail() {
+        var id = $("#secodryId").val();
+        var emailId = $("#emailId").val();
+        var phone = $("#phone").val();
+        var customerId = $("#Id").val();
+        
+        if (id == 0) {
+            $.get("/CustomerDetail/AddSecondryDetail", { customerId: customerId, phone: phone, emailId: emailId }, function (data) {
+                notification("topright", "success", "fa fa-check-circle vd_green", "Success Notification", data);
+            }).done(function () {
+                GetSecondryDetails(customerId);
+            })
+
+        } else {
+            $.get("/CustomerDetail/UpdateSecondryDetail", { id: id, phone: phone, emailId: emailId }, function (data) {
+                notification("topright", "success", "fa fa-check-circle vd_green", "Success Notification", data);
+                location.reload();
+            })
+        }
+    }
+
+    function GetSecondryDetails(customerId) {
+        $.get("/CustomerDetail/GetSecondryDetails", { custId: customerId}, function (data) {
+            $("#partialDetail").html(data);
+        })
+    }
+
+    function GetSecondryDetail(id) {
+        $.get("/CustomerDetail/GetSecondryDetail", { id: id }, function (data) {
+            $("#secodryId").val(data.id);
+            $("#emailId").val(data.email);
+            $("#phone").val(data.phone);
+        });
+    }
+
+    $(document).ready(function () {
+        GetLeadIntraction();
+        GetSecondryDetails('@ViewBag.CustomerId');
+    })
+
+    function Delete(id) {
+        $.get("/CustomerDetail/DeleteSecondryDetails", { id: id }, function (data) {
+            notification("topright", "success", "fa fa-check-circle vd_green", "Success Notification", data);
+            
+        }).done(function () {
+            location.reload();
+        })
+    }
+
+    function UpdateDetail() {
+
+    }
+
+</script>

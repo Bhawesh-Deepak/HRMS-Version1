@@ -1,0 +1,120 @@
+﻿@model HRMS.Core.Entities.LeadManagement.CustomerLeadDetail
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+
+<form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+      data-ajax-complete="AjaxComplete"
+      asp-action="PostCustomerLeadDetail" asp-controller="CustomerDetail" data-ajax-success="Success">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label">Status</label><em class="text-danger">*</em>
+                    <div class="controls">
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="CreatedBy" type="hidden" />
+                        <input asp-for="CreatedDate" type="hidden" />
+                        <select class="input-sm" asp-for="LeadType" id="ddlStatus" onchange="CheckLeadType()">
+                            <option value="">----Select----</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <label class="control-label">Intraction Date</label><em class="text-danger">*</em>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input type="date" class="input-sm" asp-for="IntractionDate">
+                            <span class="input-group-addon input-sm">at</span>
+                            <input type="time" class="input-sm" asp-for="IntractionTime">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label">Activity</label><em class="text-danger">*</em>
+                    <div class="controls">
+                        <select class="input-sm" asp-for="Activity">
+                            <option value="N/A">--Select--</option>
+                            <option value="Calls">Calls</option>
+                            <option value="Site Visit">Site Visit</option>
+                            <option value="Clousre Meeting">Clouser Meeting</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <label class="control-label">Next Inraction Date</label><em class="text-danger">*</em>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input type="date" class="input-sm" asp-for="NextIntractionDate">
+                            <span class="input-group-addon input-sm">at</span>
+                            <input type="time" class="input-sm" asp-for="NextIntractionTime">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label">Next Activity</label><em class="text-danger">*</em>
+                    <div class="controls">
+                        <select class="input-sm" asp-for="NextIntractionActivity">
+                            <option value="N/A">--Select--</option>
+                            <option value="Calls">Calls</option>
+                            <option value="Site Visit">Site Visit</option>
+                            <option value="Clousre Meeting">Clouser Meeting</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <label class="control-label">Comments</label><em class="text-danger">*</em>
+                    <div class="controls">
+                        <div class="input-group" style="width: 100%;">
+                            <textarea asp-for="Comment" placeholder="Comment..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer background-login">
+        <button type="button" class="btn vd_btn vd_btn-bevel vd_bg-red font-semibold" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button id=btnUpdate type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold"><i class="fa fa-calendar"></i> Update Activity</button>
+    </div>
+</form>
+ 
+<script type="text/javascript">
+    $(document).ready(function () {
+        GetLeadType();
+    })
+    function GetLeadType() {
+        $("#ddlStatus option").remove();
+        $('#ddlStatus').val(0);
+        $.get("/CustomerDetail/GetLeadTypeJson", function (data) {
+            $("#ddlStatus").append("<option value=''>----Select----</option>");
+            for (let i = 0; i < data.length; i++) {
+                $("#ddlStatus").append('<option value=' + data[i].id + '>' + data[i].name + '</option>');
+            }
+        });
+    }
+
+    function CheckLeadType() {
+        var id = $("#ddlStatus").val();
+        if (id == 1004) {
+            if (confirm("Are you sure you want to do this?")) {
+                location.href = "/CustomerLead/Index?customerId=" + @Model.Id;
+            }
+            else {
+                GetLeadType();
+            }
+        }
+    }
+</script>

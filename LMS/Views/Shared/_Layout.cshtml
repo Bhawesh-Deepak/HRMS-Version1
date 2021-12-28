@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LMS</title>
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="~/img/ico/favicon.png">
+    <link rel="shortcut icon" href="~/img/ico/favicon.ico">
+    <link href="~/wp-contents/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/css/font-entypo.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/jquery-ui/jquery-ui.custom.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/prettyPhoto-plugin/css/prettyPhoto.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/isotope/css/isotope.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/pnotify/css/jquery.pnotify.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/tagsInput/jquery.tagsinput.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/bootstrap-switch/bootstrap-switch.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/colorpicker/css/colorpicker.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/introjs/css/introjs.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/css/theme.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/css/chrome.css" rel="stylesheet" type="text/chrome">
+    <link href="~/wp-contents/css/theme-responsive.min.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/custom/custom.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/dataTables/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <link href="~/wp-contents/plugins/dataTables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+    
+    <style>
+        .vd_back-top,.vd_navbar{background:#436eac}
+    </style>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ajax-unobtrusive@3.2.6/dist/jquery.unobtrusive-ajax.min.js"
+            integrity="sha256-PAC000yuHt78nszJ2RO0OiDMu/uLzPLRlYTk8J3AO10="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="~/wp-contents/js/mobile-detect.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/js/modernizr.js"></script>
+    <script type="text/javascript" src="~/wp-contents/js/mobile-detect-modernizr.js"></script>
+    <script src="~/custom/CountryStateCity.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            GetCountryDetails();
+        });
+    </script>
+
+
+</head>
+<body id="dashboard" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed      responsive    clearfix" data-active="dashboard " data-smooth-scrolling="1">
+
+    <div class="vd_body">
+        <!-- Header Start -->
+        @await Component.InvokeAsync("HeaderMenu")
+        <!-- Header Ends -->
+        <div class="content">
+            <div class="container">
+                @await Component.InvokeAsync("MenuSubMenu")
+                @RenderBody()
+                @await Html.PartialAsync("~/Views/Shared/_CommanModalPopUpPartial.cshtml")
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .content -->
+        <!-- Footer Start -->
+        @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+        <!-- Footer END -->
+
+
+    </div>
+
+    <a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+    <!-- Javascript =============================================== -->
+    <script type="text/javascript" src="~/wp-contents/js/jquery.js"></script>
+    <script type="text/javascript" src="~/wp-contents/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='~/wp-contents/plugins/jquery-ui/jquery-ui.custom.min.js'></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/js/caroufredsel.js"></script>
+    <script type="text/javascript" src="~/wp-contents/js/plugins.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/breakpoints/breakpoints.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/prettyPhoto-plugin/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/tagsInput/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/blockUI/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/pnotify/js/jquery.pnotify.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/js/theme.js"></script>
+    <script type="text/javascript" src="~/wp-contents/custom/custom.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/flot/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/flot/jquery.flot.categories.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/flot/jquery.flot.time.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/flot/jquery.flot.animator.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src='~/wp-contents/plugins/moment/moment.min.js'></script>
+    <script type="text/javascript" src='~/wp-contents/plugins/jquery-ui/jquery-ui.custom.min.js'></script>
+    <script type="text/javascript" src='~/wp-contents/plugins/fullcalendar/fullcalendar.min.js'></script>
+    <script type="text/javascript" src='~/wp-contents/plugins/introjs/js/intro.min.js'></script>
+    <script type="text/javascript" src='~/wp-contents/plugins/skycons/skycons.js'></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/wp-contents/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            "use strict";
+
+            $('#data-tables').dataTable();
+        });
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+@model HRMS.Core.ReqRespVm.RequestVm.UploadExcelVm
+<div class="row">
+    <div class="col-md-12">
+        <form id="form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-begin="AjaxOnBegin"
+              data-ajax-complete="AjaxComplete"
+              asp-action="UploadAttendance" enctype="multipart/form-data"
+              asp-controller="EmployeeAttendance" data-ajax-success="Success">
+            <div class="box-body">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <label>Select Year</label>
+                        <select class="form-control" asp-for="YearId">
+                            <option value="">--Select--</option>
+                            @{ 
+                                var year = DateTime.Now.Year;
+                                for (int i = year; i < year+50; i++)
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            }
+                           
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <label>Select Month</label>
+                        <select class="form-control" asp-for="MonthId">
+                            <option value="">--Select--</option>
+                            @{
+                                for (int i = 1; i < 13; i++)
+                                {
+                                    DateTime date = new DateTime(2020, @i, 1);
+                                    <option value="@i">@date.ToString("MMMM")</option>
+                                }
+                            }
+
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <label>Upload Attendance</label>
+                        <input type="file" class="form-control" asp-for="UploadFile" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary pull-right" value="Save" />
+                    <button class="buttonload" style="display:none">
+                        <i class="fa fa-refresh fa-spin"></i>Loading
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="reset" class="btn btn-danger pull-left">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

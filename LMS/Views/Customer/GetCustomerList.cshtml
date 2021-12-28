@@ -1,0 +1,158 @@
+﻿@model IEnumerable<HRMS.Core.ReqRespVm.Response.Leads.CompleteLeadsDetailVM>
+
+@{
+    ViewData["Title"] = "Customer List";
+    var assignDate = Model?.First()?.AssignDate;
+}
+
+<div class="vd_content-wrapper">
+    <div class="vd_container">
+        <div class="vd_content clearfix">
+            <div class="vd_head-section clearfix">
+                <div class="vd_panel-header">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a> </li>
+                        <li><a href="#">Master</a> </li>
+                        <li class="active">Lead List</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vd_title-section clearfix">
+                <div class="vd_panel-header">
+                    <h1>Lead List</h1>
+                </div>
+            </div>
+            <div class="vd_content-section clearfix">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel widget">
+                            <div class="panel-heading vd_bg-green">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-table"></i> </span> Lead List</h3>
+                                <form asp-action="ExportCustomerDetail" asp-controller="CustomerDetail" method="get">
+                                    <div class="vd_panel-menu">
+                                        <input type="date" name="AssignDate" id="AssignDate" class="menu entypo-icon smaller-font" style="width:75%;margin-right:10px;color:black" value="@Model.First().AssignDate.ToString("yyyy-MM-dd")" />
+                                        <button type="submit" class="menu entypo-icon smaller-font vd_bg-yellow" title="Export Excel"><i class="fa fa-download"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="panel-body table-responsive">
+                                <table class="table table-striped" id="data-tables">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Leads Name</th>
+                                            <th>Address</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Description/Project</th>
+                                            <th>Special Remarks</th>
+                                            <th>Assign Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+                                        {
+                                            <tr>
+                                                <td>@item.Index</td>
+                                                <td>
+                                                    <a onclick="GetLeadType(@item.Data.CustomerId)" href="#">@item.Data.LeadName</a>
+
+                                                </td>
+                                                <td>@item.Data.Location</td>
+                                                <td>  <a href="tel:@item.Data.Phone" onclick="UpdateCustomerCallingData(@item.Data.CustomerId,@item.Data.Phone)">@item.Data.Phone</a></td>
+                                                <td>@item.Data.Email</td>
+                                                <td>@item.Data.Description_Project</td>
+                                                <td>@item.Data.SpecialRemarks</td>
+                                                <td>@string.Format("{0:dd/MM/yyyy}", item.Data.AssignDate)</td>
+                                                <td>@item.Data.LeadTypeName</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+                    <!-- col-md-12 -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel widget">
+                            <div class="panel-heading vd_bg-yellow">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-file-excel-o"></i> </span> Activity Import</h3>
+                                <div class="vd_panel-menu">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-minus3"></i> </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <!-- begin col-6 -->
+                                    <div class="col-md-6">
+                                        <!-- begin panel -->
+                                        <!-- end panel -->
+                                        <div class="panel panel-default" style="border-left: 3px solid #00bcd4;">
+                                            <div class="panel-heading ui-sortable-handle">
+                                                <div class="panel-heading-btn">
+                                                </div>
+                                                <h4 class="panel-title" style="color:black"> <span class="fa fa-cloud-upload" style="color:orange;padding-right: 4px;font-size: 20px;"></span>  Import Activity </h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <form asp-action="UploadActivityData" asp-controller="CustomerDetail" enctype="multipart/form-data">
+
+                                                    <div class="row">
+                                                        <div class="col-md-12 controls">
+                                                            <label>Browse   File :</label><em class="text-danger">*</em>
+                                                            <input type="file" id="ActivityData" required="" name="ActivityData" class="input-sm">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-right">
+                                                        <div class="col-md-12 ">
+                                                            <button type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold"> <i class="fa fa-upload"></i>  Upload </button>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+                    <!-- col-md-12 -->
+                </div>
+                <!-- row -->
+
+            </div>
+            <!-- .vd_content-section -->
+
+        </div>
+        <!-- .vd_content -->
+    </div>
+    <!-- .vd_container -->
+</div>
+
+
+<script src="~/CustomJavaScript/CustomJs.js"></script>
+<script type="text/javascript">
+       $(document).ready(function () {
+           $('input[type="date"]').change(function () {
+               location.href = "/CustomerDetail/CustomerList?AssignDate=" + this.value;
+           });
+       });
+       function GetLeadType(custId) {
+           $.get("/CustomerDetail/GetCustomerLeadDetail", { custId: custId }, function (response) {
+               $("#modalTitle").text("Update Activity");
+               $("#divLeadCreate").html(response);
+               $('#myLeadModal').modal({ backdrop: 'static' });
+           });
+       }
+    function UpdateCustomerCallingData(custId, phone){
+           $.get("/CustomerDetail/CustomerCallingDetails",{customerId:custId,phone:phone}, function(data){
+               alert(data);
+           })
+       }
+</script>

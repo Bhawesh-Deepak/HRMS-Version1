@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HRMS.UI</title>
+
+    <link rel="stylesheet" href="~/wp-contents/assests/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/wp-contents/assests/css/metisMenu.min.css" />
+    <link rel="stylesheet" href="~/wp-contents/assests/css/animate.min.css" />
+    <link rel="stylesheet" href="~/wp-contents/assests/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/wp-contents/assests/css/pe-icon-7-stroke.min.css" />
+    <link rel="stylesheet" href="~/wp-contents/assests/css/helper.min.css" />
+    <link href="~/wp-contents/assests/css/style.css?v=02.07" rel="stylesheet" />
+    <link href="~/wp-contents/assests/css/custom.css?v=24.01" rel="stylesheet" />
+    <script src="~/wp-contents/assests/chart/d3jsChart/js/jquery-3.3.1.min.js"></script>
+    <script src="~/wp-contents/assests/js/jquery-ui.min.js" type="13282ad51c1692550bc95cf8-text/javascript"></script>
+    <script src="~/wp-contents/assests/js/jquery.slimscroll.min.js" type="13282ad51c1692550bc95cf8-text/javascript"></script>
+    <script src="~/wp-contents/assests/js/metisMenu.min.js" type="13282ad51c1692550bc95cf8-text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="~/wp-contents/assests/js/homer.js" type="13282ad51c1692550bc95cf8-text/javascript"></script>
+    <link href="~/wp-contents/assests/css/roster.css?v=23.15" rel="stylesheet" />
+
+
+    <style>
+        .fileInput {
+            border-bottom: 4px solid lightgray;
+            border-right: 4px solid lightgray;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            padding: 10px;
+            margin: 15px;
+            cursor: pointer;
+        }
+
+        .imgPreview {
+            text-align: center;
+            margin: 5px 15px;
+            height: 150px;
+            width: 150px;
+            border-left: 1px solid gray;
+            border-right: 1px solid gray;
+            border-top: 5px solid gray;
+            border-bottom: 5px solid gray;
+        }
+
+        .imageBox {
+            height: 150px;
+            width: 150px;
+        }
+
+        .attendanceLegend table {
+            background-color: white;
+        }
+
+        .myModal.myModal2 .modal-dialog {
+            width: 913px !important;
+        }
+
+        #view-regulize .modal-dialog {
+            margin-top: 30px;
+        }
+
+        #view-regulize .modal-body {
+            max-height: 480px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="color-line"> </div>
+        <div id="logo" class="light-version"><img src="~/wp-contents/assests/img/logo.png" alt=""> </div>
+        <nav role="navigation">
+            <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
+            <div class="small-logo"><img src="~/wp-contents/assests/img/logo.png" alt=""></div>
+            <form role="search" class="navbar-form-custom" method="post" action="#">
+            </form>
+            <div class="mobile-menu">
+                <button type="button" class="navbar-toggle mobile-menu-toggle" data-toggle="collapse" data-target="#mobile-collapse"> <i class="fa fa-chevron-down"></i> </button>
+                <div class="collapse mobile-navbar" id="mobile-collapse">
+                    <ul class="nav navbar-nav">
+                        <li> <a href="/Home/Logout">Logout</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav no-borders">
+                    <li class="dropdown"> <a href="/Home/Logout"> <i class="fa fa-power-off"></i> </a> </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <aside id="menu">
+        <div id="navigation">
+
+            <div class="profile-picture">
+                <a href="/">
+                    <img src="https://sqy.s3-ap-southeast-1.amazonaws.com/employee/profile_pic/SDC0065.jpg" class="img-circle m-b" alt="logo" onerror="this.src='https://sqy.s3-ap-southeast-1.amazonaws.com/employee/profile_pic/emp.png'" style="width:120px; height:120px;">
+                </a>
+                <div class="stats-label text-color">
+                    <span class="font-extra-bold font-uppercase">Rohit Kumar</span>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <small class="text-muted font-extra-bold font-uppercase">SDC0065 <b class="caret"></b></small>
+                        </a>
+                        <ul class="dropdown-menu animated flipInX m-t-xs">
+                            <li><a href="/MyProfile">Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Home/Logout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav" id="side-menu">
+                <li><a href="/HrDashboard"> <span class="nav-label">Dashboard</span> </a></li>
+                <li><a href="/Attendance">Attendance</a></li>
+                <li><a href="/Notification/NewNotification">Notification <span class="label label-info">7 NEW</span> </a> </li>
+                <li><a href="/HrReport/LeaveBalance">Leave Balance</a></li>
+                <li><a href="/HrReport/LeaveTransaction">Leave Transaction</a></li>
+                <li>
+                    <a href="#"><span class="nav-label">Reimbursement</span><span class="fa arrow"></span> </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/Reimbursement">Mobile Reimbursement</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div id="wrapper">
+        <div id="atndRecords">
+            <div class="react-loader-container">
+                <div class="react-loader-spinner">
+                    <img src="~/wp-contents/assests/img/sqy-loader.gif" class="react-loader-img" />
+                </div>
+            </div>
+        </div>
+        <div class="content">
+
+
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer class="footer">
+            <strong>Copyright &copy; @DateTime.Now.Year <a target="_blank" href="http://www.klbs.in/">KLBS Softech </a>.</strong> All rights reserved.
+        </footer>
+    </div>
+    <script src="~/wp-contents/assests/js/hrDashboardCalendar.bundle.js?v=30.08.52" type="text/javascript"></script>
+    <script src="~/wp-contents/assests/js/rocket-loader.min.js" data-cf-settings="13282ad51c1692550bc95cf8-|49" defer=""></script>
+
+
+</body>
+</html>
