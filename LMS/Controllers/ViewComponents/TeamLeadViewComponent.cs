@@ -25,7 +25,7 @@ namespace LMS.Controllers.ViewComponents
         {
             var empCode = HttpContext.Session.GetString("empCode");
             var CustomerLeadLIst = await _ICustomerLeadRepository.GetAllEntities(x => x.IsActive && !x.IsDeleted);
-            var EmployeeDetailList = await _IEmployeeDetailRepository.GetAllEntities(x => x.IsActive && !x.IsDeleted && x.SuperVisorCode == empCode);
+            var EmployeeDetailList = await _IEmployeeDetailRepository.GetAllEntities(x => x.IsActive && !x.IsDeleted && x.SuperVisorCode == empCode.Trim());
             var CustomerComplete = new List<LeadsBySupervisorVM>();
             EmployeeDetailList.Entities.ToList().ForEach(x =>
             {

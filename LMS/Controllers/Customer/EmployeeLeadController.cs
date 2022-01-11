@@ -35,6 +35,8 @@ namespace LMS.Controllers.Customer
         public async Task<IActionResult> PostCreateLead(CustomerDetail model)
         {
             model.AssignDate = DateTime.Now;
+            model.CreatedDate = DateTime.Now;
+            model.CreatedBy= Convert.ToInt32(HttpContext.Session.GetString("empId"));
             var customerCreateResponse = await _ICustomerDetailRepository.CreateEntity(model);
             var customerId = (await _ICustomerDetailRepository.GetAllEntities(x => x.IsActive && !x.IsDeleted))
                 .Entities.Max(x => x.Id);

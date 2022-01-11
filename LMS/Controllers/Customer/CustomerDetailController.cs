@@ -26,19 +26,19 @@ namespace LMS.Controllers.Customer
         private readonly IGenericRepository<CustomerSecondryDetail, int> _ICustomerSecondryDetailRepository;
         private readonly IGenericRepository<LeadType, int> _ILeadTypeRepository;
 
-  private readonly IGenericRepository<CustomerCallingDetails, int> _ICustomerCallingDetailRepository;
+        private readonly IGenericRepository<CustomerCallingDetails, int> _ICustomerCallingDetailRepository;
         public CustomerDetailController(IGenericRepository<CustomerDetail, int> iCustomerDetailRepository,
             IGenericRepository<EmployeeDetail, int> employeeDetailRepo,
             IGenericRepository<CustomerLeadDetail, int> customerLeadRepo,
             IGenericRepository<CustomerSecondryDetail, int> customerSecondryDetailRepo,
-            IGenericRepository<LeadType, int> leadTypeRepository,IGenericRepository<CustomerCallingDetails, int> customerDetailCallingRepo)
+            IGenericRepository<LeadType, int> leadTypeRepository, IGenericRepository<CustomerCallingDetails, int> customerDetailCallingRepo)
         {
             _ICustomerDetailRepository = iCustomerDetailRepository;
             _IEmployeeDetailRepository = employeeDetailRepo;
             _ICustomerLeadRepository = customerLeadRepo;
             _ICustomerSecondryDetailRepository = customerSecondryDetailRepo;
             _ILeadTypeRepository = leadTypeRepository;
-_ICustomerCallingDetailRepository = customerDetailCallingRepo;
+            _ICustomerCallingDetailRepository = customerDetailCallingRepo;
         }
 
         public IActionResult Index()
@@ -48,7 +48,7 @@ _ICustomerCallingDetailRepository = customerDetailCallingRepo;
 
         public async Task<IActionResult> CustomerList(DateTime AssignDate)
         {
-            List<CompleteLeadsDetailVM> responseDetails = await GetCustomerDetaiAsignDateWise(AssignDate);
+            List<CompleteLeadsDetailVM> responseDetails = await GetCustomerDetaiAsignDateWise(AssignDate.Date);
 
             return await Task.Run(() => View(ViewHelper.GetViewPathDetails("Customer", "GetCustomerList"), responseDetails));
         }
@@ -144,7 +144,7 @@ _ICustomerCallingDetailRepository = customerDetailCallingRepo;
                     {
                         EmpId = Convert.ToInt32(HttpContext.Session.GetString("empId")),
                         CustomerId = customerId,
-                        Id= CustomerLeadList.Entities.Where(x=>x.CustomerId==customerId).FirstOrDefault().Id,
+                        Id = CustomerLeadList.Entities.Where(x => x.CustomerId == customerId).FirstOrDefault().Id,
                         LeadType = LeadTypeLIst.Entities.Where(x => x.Name.Contains(item.LeadType)).FirstOrDefault().Id,
                         Description = item.Description,
                         IntractionDate = item.IntractionDate,
@@ -154,7 +154,7 @@ _ICustomerCallingDetailRepository = customerDetailCallingRepo;
                         NextIntractionTime = item.NextIntractionTime,
                         NextIntractionActivity = item.NextIntractionActivity,
                         Comment = item.Comment,
-                    }) ;
+                    });
                 }
                 var response = await _ICustomerLeadRepository.UpdateMultipleEntity(CustomerLead.ToArray());
                 if (response.ResponseStatus == ResponseStatus.Success)
@@ -162,7 +162,7 @@ _ICustomerCallingDetailRepository = customerDetailCallingRepo;
                     return Json("Customer uploaded !!!");
                 }
                 return RedirectToAction("Error", "Home");
-                 
+
             }
             catch (Exception ex)
             {
@@ -279,18 +279,20 @@ _ICustomerCallingDetailRepository = customerDetailCallingRepo;
 
             return Json("Detail deleted successfully !!!");
         }
- public async Task<IActionResult> CustomerCallingDetails(int customerId, string phone)
+        public async Task<IActionResult> CustomerCallingDetails(int customerId, string phone)
         {
-            var empId = Convert.ToInt32(HttpContext.Session.GetInt32("empId"));
+            var empId = Convert.ToInt32(HttpContext.Session.GetString("empId"));
             var model = new CustomerCallingDetails()
             {
                 EmployeeId = empId,
                 CustomerId = customerId,
                 Phone = phone,
                 PhoneDateTime = DateTime.Now,
+                CreatedBy = empId,
+                CreatedDate = DateTime.Now,
             };
             var response = await _ICustomerCallingDetailRepository.CreateEntity(model);
-            return Json("Customer has been contacted.."); 
+            return Json("Customer has been contacted..");
         }
         [HttpPost]
         public async Task<IActionResult> UpdateBasicInfo(CustomerDetail model)
@@ -409,7 +411,7 @@ _ICustomerCallingDetailRepository = customerDetailCallingRepo;
                                    on CDList.Id equals CLList.CustomerId
                                    join ltype in LeadTypeLIst.Entities on CLList.LeadType equals ltype.Id into leadtype
                                    from subpet in leadtype.DefaultIfEmpty()
-                                   where CLList.EmpId == Convert.ToInt32(HttpContext.Session.GetString("empId")) && CDList.AssignDate == AssignDate
+                                   where CLList.EmpId == Convert.ToInt32(HttpContext.Session.GetString("empId")) && CDList.AssignDate.Date == AssignDate.Date
                                    select new CompleteLeadsDetailVM
                                    {
                                        CustomerId = CDList.Id,

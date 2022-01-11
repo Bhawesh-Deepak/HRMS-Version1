@@ -97,6 +97,26 @@
                         <!-- Panel Widget -->
                     </div>
                 </div>
+                 <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="panel vd_map-widget widget">
+                            <div class="panel-heading vd_bg-yellow">
+                                <h3 class="panel-title"> <span class="menu-icon"> <i class="glyphicon glyphicon-user"></i> </span> <span class="menu-text">Customer Calling Details</span> </h3>
+                                <div class="vd_panel-menu" id="change-2">
+                                    <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="fa fa-minus"></i> </div>
+
+                                    <!--<div data-action="close" data-original-title="Close" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-cross"></i> </div>-->
+                                </div>
+                                <!-- vd_panel-menu -->
+                            </div>
+                            <div class="panel-body-list">
+                                @await Component.InvokeAsync("CustomerCallingDetails")
+                            </div>
+                        </div>
+                        <!-- Panel Widget -->
+                    </div>
+                </div>
             </div>
             <!-- .vd_content-section -->
 

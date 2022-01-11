@@ -1,476 +1,502 @@
 ﻿@model HRMS.Core.Entities.LeadManagement.CustomerLeadCloserForm
- <div class="modal-body">
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel widget vd_realtime-chart-widget">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <input type="hidden" asp-for="Id" placeholder="Enter TCFID" class="input-sm" />
-                            <input type="hidden" asp-for="CustomerId" placeholder="Enter TCFID" class="input-sm" />
-                            <label class="control-label">
-                                TCFID
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="TCFID" placeholder="Enter TCFID" class="input-sm" />
+<style>
+    .modal-dialog {
+        width: 100%;
+        height: 600px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                TCFRefrenceId
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="TCFRefrenceId" placeholder="Enter TCFRefrenceId" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Status
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="status" placeholder="Enter Status" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                SubmittedOn
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="SubmittedOn" placeholder="Enter SubmittedOn" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Month
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Month" placeholder="Enter Month" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                OpsAppvdDate
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="OpsAppvdDate" placeholder="Enter OpsAppvdDate" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Branch
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Branch" placeholder="Enter Branch" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                NetRevenueINR
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="NetRevenueINR" placeholder="Enter NetRevenueINR" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                UnitNumber
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="UnitNumber" placeholder="Enter UnitNumber" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                ShareHolder
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="ShareHolder" placeholder="Enter ShareHolder" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                SharePercentage
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="SharePercentage" placeholder="Enter SharePercentage" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CustomerName
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CustomerName" placeholder="Enter CustomerName" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Email
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Email" placeholder="Enter Email" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Builder
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Builder" placeholder="Enter Builder" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                ProductName
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="ProductName" placeholder="Enter ProductName" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                ProjectCity
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="ProjectCity" placeholder="Enter ProjectCity" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                EmployeeName
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="EmployeeName" placeholder="Enter EmployeeName" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                DeletedRemarks
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="DeletedRemarks" placeholder="Enter DeletedRemarks" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                MobileNo
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="MobileNo" placeholder="Enter MobileNo" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Leadsource
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="LeadSource" placeholder="Enter Leadsource" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                rstatus
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="rstatus" placeholder="Enter rstatus" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                RFDate
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="RFDate" placeholder="Enter RFDate" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                RFComment
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="RFComment" placeholder="Enter RFComment" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CancelledOn
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CancelledOn" placeholder="Enter CancelledOn" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CRMExecutive
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CRMExecutive" placeholder="Enter CRMExecutive" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CRMRemarks
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CRMRemarks" placeholder="Enter CRMRemarks" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                PaymentPlan
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="PaymentPlan" placeholder="Enter PaymentPlan" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                T2
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="T2" placeholder="Enter T2" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                PnLHead
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="PnlHead" placeholder="Enter PnLHead" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Region
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Region" placeholder="Enter Region" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Fin_Segment
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Fin_Segment" placeholder="Enter Fin_Segment" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Whitelisted
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Whitelisted" placeholder="Enter Whitelisted" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CountedMonth
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CountedMonth" placeholder="Enter CountedMonth" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                WriteOff
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="WriteOff" placeholder="Enter WriteOff" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CPName
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CPName" placeholder="Enter CPName" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                CPCode
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="CPCode" placeholder="Enter CPCode" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Sub Broker Details
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="SubBrokerDetails" placeholder="Enter Sub Broker Details" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                AgentName
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="AgentName" placeholder="Enter AgentName" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                AgentCode
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="AgentCode" placeholder="Enter AgentCode" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Agent Details
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="AgentDetails" placeholder="Enter   Agent Details" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Gross
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="Gross" placeholder="Enter Gross" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                NewGR
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="NewGr" placeholder="Enter NewGR" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                NewGRRemarks
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="NewGrRemarks" placeholder="Enter NewGRRemarks" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                Product Type
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="ProductType" placeholder="Enter Product Type" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                PartiallyInvoiced
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="PartiallyInvoiced" placeholder="Enter PartiallyInvoiced" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                FullyInvoiced
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="FullyInvoiced" placeholder="Enter FullyInvoiced" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                SelfFunding
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="SelfFunding" placeholder="Enter SelfFunding" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                TPLSanctioned
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="TPLSanctioned" placeholder="Enter TPLSanctioned" class="input-sm" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                TPLDisbursed
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="TPLDisbursed" placeholder="Enter TPLDisbursed" class="input-sm" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">
-                                DefferedLoan
-                            </label><em class="text-danger">*</em>
-                            <div class="controls">
-                                <input type="text" asp-for="DefferedLoan" placeholder="Enter DefferedLoan " class="input-sm" />
-                            </div>
-                        </div>
-                       
+    .modal-content {
+        float: right
+    }
 
+    .vd_bg-green {
+        background: #436eac !important;
+        box-shadow: none !important
+    }
+
+    .vd_content-section .row, .panel {
+        margin-bottom: 0
+    }
+
+        .panel .panel-body {
+            padding: 15px 25px 27px;
+        }
+</style>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel widget vd_realtime-chart-widget">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <input type="hidden" asp-for="Id" placeholder="Enter TCFID" class="input-sm" />
+                                <input type="hidden" asp-for="CustomerId" placeholder="Enter TCFID" class="input-sm" />
+                                <label class="control-label">
+                                    TCFID
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="TCFID" placeholder="Enter TCFID" class="input-sm" />
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    TCFRefrenceId
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="TCFRefrenceId" placeholder="Enter TCFRefrenceId" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Status
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="status" placeholder="Enter Status" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    SubmittedOn
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="SubmittedOn" placeholder="Enter SubmittedOn" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Month
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Month" placeholder="Enter Month" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    OpsAppvdDate
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="OpsAppvdDate" placeholder="Enter OpsAppvdDate" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Branch
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Branch" placeholder="Enter Branch" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    NetRevenueINR
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="NetRevenueINR" placeholder="Enter NetRevenueINR" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    UnitNumber
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="UnitNumber" placeholder="Enter UnitNumber" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    ShareHolder
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="ShareHolder" placeholder="Enter ShareHolder" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    SharePercentage
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="SharePercentage" placeholder="Enter SharePercentage" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CustomerName
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CustomerName" placeholder="Enter CustomerName" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Email
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Email" placeholder="Enter Email" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Builder
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Builder" placeholder="Enter Builder" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    ProductName
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="ProductName" placeholder="Enter ProductName" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    ProjectCity
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="ProjectCity" placeholder="Enter ProjectCity" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    EmployeeName
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="EmployeeName" placeholder="Enter EmployeeName" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    DeletedRemarks
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="DeletedRemarks" placeholder="Enter DeletedRemarks" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    MobileNo
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="MobileNo" placeholder="Enter MobileNo" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Leadsource
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="LeadSource" placeholder="Enter Leadsource" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    rstatus
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="rstatus" placeholder="Enter rstatus" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    RFDate
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="RFDate" placeholder="Enter RFDate" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    RFComment
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="RFComment" placeholder="Enter RFComment" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CancelledOn
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CancelledOn" placeholder="Enter CancelledOn" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CRMExecutive
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CRMExecutive" placeholder="Enter CRMExecutive" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CRMRemarks
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CRMRemarks" placeholder="Enter CRMRemarks" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    PaymentPlan
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="PaymentPlan" placeholder="Enter PaymentPlan" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    T2
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="T2" placeholder="Enter T2" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    PnLHead
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="PnlHead" placeholder="Enter PnLHead" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Region
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Region" placeholder="Enter Region" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Fin_Segment
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Fin_Segment" placeholder="Enter Fin_Segment" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Whitelisted
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Whitelisted" placeholder="Enter Whitelisted" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CountedMonth
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CountedMonth" placeholder="Enter CountedMonth" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    WriteOff
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="WriteOff" placeholder="Enter WriteOff" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CPName
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CPName" placeholder="Enter CPName" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    CPCode
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="CPCode" placeholder="Enter CPCode" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Sub Broker Details
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="SubBrokerDetails" placeholder="Enter Sub Broker Details" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    AgentName
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="AgentName" placeholder="Enter AgentName" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    AgentCode
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="AgentCode" placeholder="Enter AgentCode" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Agent Details
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="AgentDetails" placeholder="Enter   Agent Details" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Gross
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="Gross" placeholder="Enter Gross" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    NewGR
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="NewGr" placeholder="Enter NewGR" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    NewGRRemarks
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="NewGrRemarks" placeholder="Enter NewGRRemarks" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Product Type
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="ProductType" placeholder="Enter Product Type" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    PartiallyInvoiced
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="PartiallyInvoiced" placeholder="Enter PartiallyInvoiced" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    FullyInvoiced
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="FullyInvoiced" placeholder="Enter FullyInvoiced" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    SelfFunding
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="SelfFunding" placeholder="Enter SelfFunding" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    TPLSanctioned
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="TPLSanctioned" placeholder="Enter TPLSanctioned" class="input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    TPLDisbursed
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="TPLDisbursed" placeholder="Enter TPLDisbursed" class="input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    DefferedLoan
+                                </label><em class="text-danger">*</em>
+                                <div class="controls">
+                                    <input type="text" asp-for="DefferedLoan" placeholder="Enter DefferedLoan " class="input-sm" />
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Panel Widget -->
         </div>
-        <!-- Panel Widget -->
-    </div>
 
-</div> </div>
-    <div class="modal-footer background-login">
-        <button type="button" class="btn vd_btn vd_btn-bevel vd_bg-red font-semibold" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold" value="Save Changes" />
-        <button class="buttonload" style="display:none">
-            <i class="fa fa-refresh fa-spin"></i>Loading
-        </button>
     </div>
+</div>
+<div class="modal-footer background-login">
+    <button type="button" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold" data-dismiss="modal">Close</button>
+    <input type="submit" class="btn vd_btn vd_btn-bevel vd_bg-green font-semibold" value="Save Changes" />
+    <button class="buttonload" style="display:none">
+        <i class="fa fa-refresh fa-spin"></i>Loading
+    </button>
+</div>
