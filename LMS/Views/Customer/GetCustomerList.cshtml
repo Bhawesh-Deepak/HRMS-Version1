@@ -56,14 +56,29 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Leads Name</th>
-                                            <th>Address</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>Description/Project</th>
-                                            <th>Special Remarks</th>
+                                            <th>Full Name</th>
+                                            <th>
+                                                Country
+                                            </th>
+                                            <th>
+                                                Phone No.
+                                            </th>
+                                            <th>
+                                                Email
+                                            </th>
+                                            <th>
+                                                Project
+                                            </th>
+                                            <th>
+                                                Special Remarks
+                                            </th>
                                             <th>Assign Date</th>
-                                            <th>Status</th>
+                                            <th>
+                                                Interested To Buy
+                                            </th>
+                                       <th>
+                                              Status
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -81,7 +96,8 @@
                                                 <td>@item.Data.Description_Project</td>
                                                 <td>@item.Data.SpecialRemarks</td>
                                                 <td>@string.Format("{0:dd/MM/yyyy}", item.Data.AssignDate)</td>
-                                                <td>@item.Data.LeadTypeName</td>
+                                                <td>@item.Data.InterestedToBuy</td>
+                                                  <td>@item.Data.LeadTypeName</td>
                                             </tr>
                                         }
                                     </tbody>

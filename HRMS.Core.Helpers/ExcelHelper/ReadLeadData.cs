@@ -17,12 +17,13 @@ namespace HRMS.Core.Helpers.ExcelHelper
             for (int i = 1; i < dataResult.dtResult.Rows.Count; i++)
             {
                 var model = new CustomerDetail();
-                model.LeadName = dataResult.dtResult.Rows[i][0].ToString();
-                model.Location = dataResult.dtResult.Rows[i][1].ToString();
-                model.Phone = dataResult.dtResult.Rows[i][2].ToString();
+                model.Description_Project = dataResult.dtResult.Rows[i][0].ToString();
+                model.InterestedToBuy = dataResult.dtResult.Rows[i][1].ToString();
+                model.LeadName = dataResult.dtResult.Rows[i][2].ToString();
                 model.Email = dataResult.dtResult.Rows[i][3].ToString();
-                model.Description_Project = dataResult.dtResult.Rows[i][4].ToString();
-                model.SpecialRemarks = dataResult.dtResult.Rows[i][5].ToString();
+                model.Phone = dataResult.dtResult.Rows[i][4].ToString();
+                model.Location = dataResult.dtResult.Rows[i][5].ToString();
+                model.SpecialRemarks = dataResult.dtResult.Rows[i][6].ToString();
                 model.Country = string.Empty;
                 model.State = string.Empty;
                 model.City = string.Empty;
@@ -47,12 +48,13 @@ namespace HRMS.Core.Helpers.ExcelHelper
             {
                 var model = new CustomerDetail();
                 model.EmpCode = dataResult.dtResult.Rows[i][0].ToString();
-                model.LeadName = dataResult.dtResult.Rows[i][1].ToString();
-                model.Location = dataResult.dtResult.Rows[i][2].ToString();
-                model.Phone = dataResult.dtResult.Rows[i][3].ToString();
+                model.Description_Project = dataResult.dtResult.Rows[i][1].ToString();
+                model.InterestedToBuy = dataResult.dtResult.Rows[i][2].ToString();
+                model.LeadName = dataResult.dtResult.Rows[i][3].ToString();
                 model.Email = dataResult.dtResult.Rows[i][4].ToString();
-                model.Description_Project = dataResult.dtResult.Rows[i][5].ToString();
-                model.SpecialRemarks = dataResult.dtResult.Rows[i][6].ToString();
+                model.Phone = dataResult.dtResult.Rows[i][5].ToString();
+                model.Location = dataResult.dtResult.Rows[i][6].ToString();
+                model.SpecialRemarks = dataResult.dtResult.Rows[i][7].ToString();
                 model.Country = string.Empty;
                 model.State = string.Empty;
                 model.City = string.Empty;

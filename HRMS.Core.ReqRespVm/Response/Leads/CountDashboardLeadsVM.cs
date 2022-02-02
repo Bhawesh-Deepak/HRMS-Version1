@@ -14,5 +14,7 @@ namespace HRMS.Core.ReqRespVm.Response.Leads
         public int HotLeads { get; set; }
         public int IncompleteLeads { get; set; }
         public int NotInterested { get; set; }
+        public int SiteVisit { get; set; }
+        public int SelfGenerated { get; set; }
     }
 }

@@ -19,11 +19,13 @@ namespace LMS.Controllers.ViewComponents
         public CountLeadsViewComponent(IGenericRepository<CustomerLeadDetail, int> customerLeadRepo)
         {
             _ICustomerLeadRepository = customerLeadRepo;
+             
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-             
+
             var CustomerLeadLIst = await _ICustomerLeadRepository.GetAllEntities(x => x.IsActive && !x.IsDeleted && x.EmpId == Convert.ToInt32(HttpContext.Session.GetString("empId")));
+            
             var CountDashboard = new CountDashboardLeadsVM()
             {
                 TotalLeads = CustomerLeadLIst.Entities.Count(),
@@ -32,9 +34,11 @@ namespace LMS.Controllers.ViewComponents
                 ColdLeads = CustomerLeadLIst.Entities.Where(x => x.LeadType == 3).Count(),
                 NotInterested = CustomerLeadLIst.Entities.Where(x => x.LeadType == 4).Count(),
                 IncompleteLeads = CustomerLeadLIst.Entities.Where(x => x.LeadType == 0).Count(),
+                SiteVisit = CustomerLeadLIst.Entities.Where(x => x.LeadType == 6).Count(),
+                SelfGenerated = CustomerLeadLIst.Entities.Where(x => x.CreatedBy == Convert.ToInt32(HttpContext.Session.GetString("empId"))).Count(),
             };
             return await Task.FromResult((IViewComponentResult)View("_CountDashboardLeads", CountDashboard));
         }
-      
+
     }
 }

@@ -12,7 +12,7 @@
                       asp-action="PostCreateLead" asp-controller="EmployeeLead" data-ajax-success="Success">
                         <div class="row">
                             <div class="col-md-4">
-                                <label class="control-label">Lead Name</label>
+                                <label class="control-label">Full Name</label>
                                 <div class="controls">
                                     <input asp-for="Id" type="hidden" />
                                     <input asp-for="CreatedBy" type="hidden" />
@@ -24,14 +24,14 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label class="control-label">Location</label>
+                                <label class="control-label">Country</label>
                                 <div class="controls">
                                     <input type="text" asp-for="Location" class="input-sm">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
-                                <label class="control-label">Phone</label>
+                                <label class="control-label"> Phone No.</label>
                                 <div class="controls">
                                     <input type="number" asp-for="Phone" class="input-sm">
                                 </div>
@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label class="control-label">Description/Project</label>
+                                <label class="control-label">Project</label>
                                 <div class="controls">
                                     <input type="text" asp-for="Description_Project" class="input-sm">
                                 </div>
@@ -58,6 +58,16 @@
                                     <input type="text" asp-for="SpecialRemarks" class="input-sm">
                                 </div>
                             </div>
+                        </div>
+                         <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="control-label">Interested To Buy</label>
+                                <div class="controls">
+                                    <input type="text" asp-for="InterestedToBuy" class="input-sm">
+                                </div>
+                            </div>
+ 
                         </div>
                         <div class="form-actions">
                             <div class="col-sm-12">

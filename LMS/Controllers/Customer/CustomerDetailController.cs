@@ -422,8 +422,8 @@ namespace LMS.Controllers.Customer
                                        Description_Project = CDList.Description_Project,
                                        AssignDate = CDList.AssignDate,
                                        SpecialRemarks = CDList.SpecialRemarks,
-                                       LeadTypeName = subpet?.Name ?? String.Empty
-
+                                       LeadTypeName = subpet?.Name ?? String.Empty,
+                                      InterestedToBuy= CDList.InterestedToBuy
                                    }).ToList();
             return responseDetails;
         }

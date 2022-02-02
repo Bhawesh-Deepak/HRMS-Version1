@@ -17,5 +17,6 @@ namespace HRMS.Core.ReqRespVm.Response.Leads
         public string SpecialRemarks { get; set; }
         public DateTime AssignDate { get; set; }
         public string LeadTypeName { get; set; }
+        public string InterestedToBuy { get; set; }
     }
 }
